@@ -28,7 +28,7 @@ class Plugin():
         enable_menu() -- enable menu entries when a project is open.    
     """
     VERSION = '@release'
-    NOVELYST_API = '4.11'
+    NOVELYST_API = '4.12'
     DESCRIPTION = 'Creates a story arc framework from a markdown template'
     URL = 'https://peter88213.github.io/novelyst_templates'
 

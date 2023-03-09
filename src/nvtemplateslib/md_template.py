@@ -59,30 +59,27 @@ class MdTemplate:
 
                 #--- Add a Todo scene.
                 newTitle = mdLine[5:]
-                scId = self._ui.tv.add_scene(title=newTitle)
+                scId = self._ui.tv.add_scene(title=newTitle, scType=2)
                 if scId:
                     newElement = self._ui.novel.scenes[scId]
-                    newElement.scType = 2
             elif mdLine.startswith('###'):
                 if not parent:
                     continue
 
                 #--- Add a Todo chapter.
                 newTitle = mdLine[4:]
-                chId = self._ui.tv.add_chapter(title=newTitle)
+                chId = self._ui.tv.add_chapter(title=newTitle, chType=2)
                 if chId:
                     newElement = self._ui.novel.chapters[chId]
-                    newElement.chType = 2
             elif mdLine.startswith('##'):
                 if not parent:
                     continue
 
                 #--- Add a Todo part.
                 newTitle = mdLine[3:]
-                chId = self._ui.tv.add_part(title=newTitle)
+                chId = self._ui.tv.add_part(title=newTitle, chType=2)
                 if chId:
                     newElement = self._ui.novel.chapters[chId]
-                    newElement.chType = 2
             elif mdLine.startswith('#'):
 
                 #--- Get the parent node for the next new element.
