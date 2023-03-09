@@ -29,7 +29,7 @@ class Plugin():
     """
     VERSION = '@release'
     NOVELYST_API = '4.12'
-    DESCRIPTION = 'Creates a story arc framework from a markdown template'
+    DESCRIPTION = 'A "Story Templates" manager'
     URL = 'https://peter88213.github.io/novelyst_templates'
 
     def install(self, ui):
@@ -92,3 +92,5 @@ class Plugin():
             templates.write()
         except Error as ex:
             messagebox.showerror(_('Cannot save template'), str(ex))
+
+        self._ui.set_info_how(_('Template saved.'))

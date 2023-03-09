@@ -1,8 +1,8 @@
 # novelyst_templates
 
-A Story Template management plugin for [novelyst](https://peter88213.github.io/novelyst)
+A "Story Templates" manager plugin for [novelyst](https://peter88213.github.io/novelyst)
 
-Adds a 'Story Templates' entry to the 'Tools' menu to open a submenu for applying a story structure. 
+Adds a **Story Templates** entry to the **Tools** menu to open a submenu for loading and saving the story structure. 
 
 For more information, see the [project homepage](https://peter88213.github.io/novelyst_templates) with description and download instructions.
 
