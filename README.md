@@ -1,2 +1,20 @@
 # novelyst_templates
-A "Story Templates" plugin for novelyst
+
+A theme changer plugin for [novelyst](https://peter88213.github.io/novelyst)
+
+
+Adds a 'Theme Changer' entry to the 'Tools' menu to open a window with a combobox that lists all available themes. 
+
+The selected theme will be persistently applied.  
+
+For more information, see the [project homepage](https://peter88213.github.io/novelyst_templates) with description and download instructions.
+
+## Usage
+
+Start the theme changer from the main menu: **Tools > Theme Changer**.
+
+## License
+
+This is Open Source software, and the *novelyst_templates* plugin is licensed under GPLv3. See the
+[GNU General Public License website](https://www.gnu.org/licenses/gpl-3.0.en.html) for more
+details, or consult the [LICENSE](https://github.com/peter88213/novelyst_templates/blob/main/LICENSE) file.
