@@ -10,26 +10,27 @@
 
 ### A - Storyline
 
+Applying a beat sheet as described in "Save The Cat! Writes A Novel" by Jessica Brody.
+
 #### Opening Image
 
-Ein "bisher"-Schnappschuss deines Helden und seiner Welt.
+A "so far" snapshot of your hero and his world.
 
 #### Theme Stated
 
-Eine Aussage von einer Figur (üblicherweise nicht der Held), die einen Hinweis gibt, worum es beim Erzählbogen des Helden geht (das heißt, was der Held vor dem Ende des Buchs lernen/entdecken muss). 
+A statement from a character (usually not the hero) that gives a hint of what the hero's story arc is about (that is, what the hero must learn/discover before the end of the book). 
 
 #### Setup
 
-Eine Erforschung des Status Quo des Lebens des Helden und all seiner Macken, wo wir lernen, wie das Leben des Helden vor seiner epischen Transformation aussieht. Hier führen wir auch andere unterstützende Figuren und das vordergründige Ziel des Helden ein. Doch am wichhtigsten: wir zeigen den Widerstand des Helden zur Veränderung (die Lektion Lernen), während wir auch zeigen, was auf dem Spiel steht, sollte sich der Held nicht ändern.
+An exploration of the status quo of the hero's life and all its quirks, where we learn what the hero's life is like before his epic transformation. Here we also introduce other supporting characters and the hero's ostensible goal. But most importantly, we show the hero's resistance to change ("learning the lesson"), while also showing what is at stake should the hero not change.
 
 #### Catalyst
 
-Ein zündendes Vorkommnis (oder lebensveränderndes Ereignis), das den Helden in eine neue Welt katapultiert, oder zum Umdenken bringt. Ein Schlag, der stark genug sein sollte, um die Rückkehr des Helden zum Status Quo des Setup zu verhindern.
+An igniting incident (or life-changing event) that catapults the hero into a new world, or causes him to rethink. A blow that should be strong enough to prevent the hero's return to the setup's status quo.
 
 #### Debate
 
-Die Reaktion, eine Sequenz, in der der Held debattiert, was als Nächstes zu tun ist. Sie wird gewöhnlich als Frage präsentiert (wie "sollte ich gehen?"). Der Zweck ist, die Zögerlichkeit zur Veränderung zu zeigen.
-
+The reaction, a sequence in which the hero debates what to do next. It is usually presented as a question (like "should I go?"). The purpose is to show hesitation to change.
 
 #### Break into 2
 
