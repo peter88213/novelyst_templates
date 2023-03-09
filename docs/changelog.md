@@ -5,6 +5,12 @@
 ## Changelog
 
 
+### v1.0.0 
+
+- Define arcs as described in the help file when creating Todo chapters.
+
+Compatibility: novelyst v4.12 API
+
 ### v0.2.1 
 
 - Provide online help.

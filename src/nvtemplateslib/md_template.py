@@ -70,6 +70,8 @@ class MdTemplate:
                 chId = self._ui.tv.add_chapter(title=newTitle, chType=2)
                 if chId:
                     newElement = self._ui.novel.chapters[chId]
+                    if parent == 'pl':
+                        newElement.kwVar['Field_ArcDefinition'] = newTitle[0]
             elif mdLine.startswith('##'):
                 if not parent:
                     continue
