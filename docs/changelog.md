@@ -5,6 +5,12 @@
 ## Changelog
 
 
+### v0.2.1 
+
+- Provide online help.
+
+Compatibility: novelyst v4.12 API
+
 ### v0.2.0 
 
 - Add "Save" command.

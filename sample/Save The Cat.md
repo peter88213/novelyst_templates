@@ -1,7 +1,9 @@
 # nv
 
 ### ACT 1
+
 ### ACT 2
+
 ### ACT 3
 
 # pl
@@ -34,30 +36,21 @@ The reaction, a sequence in which the hero debates what to do next. It is usuall
 
 #### Break into 2
 
-
 #### B Story
-
 
 #### Fun and Games
 
-
 #### Midpoint
-
 
 #### Bad Guys close in
 
-
 #### All is lost
-
 
 #### Dark night of the soul
 
-
 #### Break into 3
 
-
 #### Finale
-
 
 #### Final Image
 

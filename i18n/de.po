@@ -3,9 +3,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: 0.2.0\n"
-"POT-Creation-Date: 2023-03-09 18:55:02\n"
-"PO-Revision-Date: 2023-03-09 18:55:02\n"
+"Project-Id-Version: 0.2.1\n"
+"POT-Creation-Date: 2023-03-09 19:44:05\n"
+"PO-Revision-Date: 2023-03-09 19:44:06\n"
 "Last-Translator: Peter Triesberger\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
@@ -42,6 +42,9 @@ msgstr "Laden der Vorlage abgebrochen"
 
 msgid "Template saved."
 msgstr "Vorlage gespeichert"
+
+msgid "Templates plugin Online help"
+msgstr "Vorlagen-Plugin Online-Hilfe"
 
 msgid "Wrong heading"
 msgstr "Falsche Überschrift"
