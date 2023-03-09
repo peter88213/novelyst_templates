@@ -3,9 +3,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: 0.1.1\n"
-"POT-Creation-Date: 2023-03-09 15:20:02\n"
-"PO-Revision-Date: 2023-03-09 15:20:02\n"
+"Project-Id-Version: unknown\n"
+"POT-Creation-Date: 2023-03-09 17:33:08\n"
+"PO-Revision-Date: 2023-03-09 17:57:41\n"
 "Last-Translator: Peter Triesberger\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
@@ -16,11 +16,17 @@ msgstr ""
 msgid "Cannot read file"
 msgstr "Kann Datei nicht lesen"
 
+msgid "Cannot save template"
+msgstr "Kann Vorlage nicht speichern"
+
 msgid "File not found"
 msgstr "Datei nicht gefunden"
 
 msgid "Load"
 msgstr "Laden"
+
+msgid "Save"
+msgstr "Speichern"
 
 msgid "Story Template"
 msgstr "Erzählstruktur-Vorlage"

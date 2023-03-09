@@ -3,8 +3,8 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: 0.1.1\n"
-"POT-Creation-Date: 2023-03-09 15:20:02\n"
+"Project-Id-Version: unknown\n"
+"POT-Creation-Date: 2023-03-09 17:33:08\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: LANGUAGE\n"
@@ -17,10 +17,16 @@ msgstr ""
 msgid "Cannot read file"
 msgstr ""
 
+msgid "Cannot save template"
+msgstr ""
+
 msgid "File not found"
 msgstr ""
 
 msgid "Load"
+msgstr ""
+
+msgid "Save"
 msgstr ""
 
 msgid "Story Template"

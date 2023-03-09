@@ -4,7 +4,6 @@ Copyright (c) 2023 Peter Triesberger
 For further information see https://github.com/peter88213/
 License: GNU GPLv3 (https://www.gnu.org/licenses/gpl-3.0.en.html)
 """
-import os
 from nvtemplateslib.nvtemplates_globals import *
 
 
@@ -31,7 +30,7 @@ class MdTemplate:
         self._ui = ui
 
     def read(self):
-        """Parse the file and get the instance variables.
+        """Parse the Markdown file and create parts, chapters, and scenes.
         
         Raise the "Error" exception in case of error. 
         """
@@ -92,9 +91,40 @@ class MdTemplate:
                 desc.append(mdLine)
 
     def write(self):
-        """Write instance variables to the file.
+        """Iterate the project structure and write "Todo" elements to a Markdown file.
         
         Raise the "Error" exception in case of error. 
         """
-        raise Error(f'Write method is not implemented.')
+        mdLines = []
+        planningSection = False
+        for chId in self._ui.novel.srtChapters:
+            if self._ui.novel.chapters[chId].chType != 2:
+                continue
+
+            if self._ui.novel.chapters[chId].chLevel == 1:
+                # part begins
+                if not planningSection:
+                    mdLines.append('# pl')
+                    planningSection = True
+                mdLines.append(f'## {self._ui.novel.chapters[chId].title}')
+            else:
+                # chapter begins
+                if not mdLines:
+                    mdLines.append('# nv')
+                mdLines.append(f'### {self._ui.novel.chapters[chId].title}')
+            desc = self._ui.novel.chapters[chId].desc
+            if desc:
+                mdLines.append(desc.replace('\n', '\n\n'))
+            for scId in self._ui.novel.chapters[chId].srtScenes:
+                mdLines.append(f'#### {self._ui.novel.scenes[scId].title}')
+                desc = self._ui.novel.scenes[scId].desc
+                if desc:
+                    mdLines.append(desc.replace('\n', '\n\n'))
+
+        content = '\n\n'.join(mdLines)
+        try:
+            with open(self.filePath, 'w', encoding='utf-8') as f:
+                f.write(content)
+        except:
+            raise Error(f'{_("Cannot write file")}: "{norm_path(self.filePath)}".')
 
