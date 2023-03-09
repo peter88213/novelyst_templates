@@ -1,7 +1,6 @@
 # novelyst_templates
 
-A theme changer plugin for [novelyst](https://peter88213.github.io/novelyst)
-
+A Story Template management plugin for [novelyst](https://peter88213.github.io/novelyst)
 
 Adds a 'Story Templates' entry to the 'Tools' menu to open a submenu for applying a story structure. 
 
