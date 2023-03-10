@@ -36,17 +36,17 @@ class MdTemplate:
         """
         try:
             with open(self.filePath, 'r', encoding='utf-8') as f:
-                content = f.read()
+                mdLines = f.readlines()
         except(FileNotFoundError):
             raise Error(f'{_("File not found")}: "{norm_path(self.filePath)}".')
         except:
             raise Error(f'{_("Cannot read file")}: "{norm_path(self.filePath)}".')
 
-        mdLines = content.split('\n')
         parent = None
         newElement = None
         desc = []
         for mdLine in mdLines:
+            mdLine = mdLine.strip()
             if mdLine.startswith('#'):
                 if newElement is not None:
                     newElement.desc = '\n'.join(desc)

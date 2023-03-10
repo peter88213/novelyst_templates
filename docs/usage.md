@@ -44,7 +44,7 @@ The *Story Template* Markdown file defines such a structure with headings and or
 
 ### First level heading
 
-The first level heading begins with `#`, followed by a blank and a title. 
+The first level heading begins with `#`, followed by a space and a title. 
 
 Two titles are allowed:
 - `nv` for the "Todo" chapters in the *Narrative* tree, signifying e.g. acts.
@@ -54,7 +54,7 @@ Two titles are allowed:
 
 ### Second level heading
 
-The second level heading begins with `##`, followed by a blank and a part title. 
+The second level heading begins with `##`, followed by a space and a part title. 
 
 - One second level heading is required for creating the "Arcs" part in the *Planning* tree.
 
@@ -62,7 +62,7 @@ The second level heading begins with `##`, followed by a blank and a part title.
 
 ### Third level heading
 
-The third level heading begins with `###`, followed by a blank and a chapter title. 
+The third level heading begins with `###`, followed by a space and a chapter title. 
 
 - In the *Narrative* tree, a chapter signifying a story phase such as an act is created. 
 - In the *Planning* tree, a chapter signifying an arc is created. The arc name will be the first character of the chapter title.
@@ -71,7 +71,7 @@ The third level heading begins with `###`, followed by a blank and a chapter tit
 
 ### Fourth level heading
 
-The fourth level heading begins with one `####`, followed by a blank and a scene title. 
+The fourth level heading begins with one `####`, followed by a space and a scene title. 
 
 - Under a chapter in the *Planning* tree, a scene signifying an arc point is created.
 
@@ -110,23 +110,13 @@ A "so far" snapshot of your hero and his world.
 #### Theme Stated
 
 A statement from a character (usually not the hero) that
-gives a hint of what the hero's story arc is about (that is,
-what the hero must learn/discover before the end of the book). 
+gives a hint of what the hero's story arc is about. 
 
 #### Setup
 
 #### Catalyst
 
-An igniting incident (or life-changing event) that catapults
-the hero into a new world, or causes him to rethink. A blow
-that should be strong enough to prevent the hero's return to
-the setup's status quo.
-
 #### Debate
-
-The reaction, a sequence in which the hero debates what to do
-next. It is usually presented as a question (like "should I go?").
-The purpose is to show hesitation to change.
 
 #### Break into 2
 

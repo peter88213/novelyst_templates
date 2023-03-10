@@ -5,6 +5,13 @@
 ## Changelog
 
 
+### v1.0.1 
+
+- When reading Markdown, discard trailing spaces.
+- Add sample templates: Hero's Journey, 3 Act Structure, 4 Act Structure.
+
+Compatibility: novelyst v4.12 API
+
 ### v1.0.0 
 
 - Define arcs as described in the help file when creating Todo chapters.
