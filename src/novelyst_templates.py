@@ -41,11 +41,17 @@ class Plugin():
             ui -- reference to the NovelystTk instance of the application.
         """
         self._ui = ui
+        try:
+            homeDir = str(Path.home()).replace('\\', '/')
+            self._templateDir = f'{homeDir}/.pywriter/novelyst/templates'
+        except:
+            self._templateDir = '.'
 
         # Create "Story Templates" submenu.
         self._templatesMenu = tk.Menu(self._ui.toolsMenu, tearoff=0)
         self._templatesMenu.add_command(label=_('Load'), command=self._load_template)
         self._templatesMenu.add_command(label=_('Save'), command=self._save_template)
+        self._templatesMenu.add_command(label=_('Open folder'), command=self._open_folder)
 
         # Create Tools menu entry.
         self._ui.toolsMenu.add_cascade(label=APPLICATION, menu=self._templatesMenu)
@@ -65,14 +71,9 @@ class Plugin():
 
     def _load_template(self):
         """Create a structure of "Todo" chapters and scenes from a Markdown file."""
-        try:
-            homeDir = str(Path.home()).replace('\\', '/')
-            templateDir = f'{homeDir}/.pywriter/novelyst/templates'
-        except:
-            templateDir = '.'
         fileName = filedialog.askopenfilename(filetypes=self._fileTypes,
                                               defaultextension=self._fileTypes[0][1],
-                                              initialdir=templateDir)
+                                              initialdir=self._templateDir)
         try:
             templates = MdTemplate(fileName, self._ui)
             templates.read()
@@ -81,14 +82,9 @@ class Plugin():
 
     def _save_template(self):
         """Save a structure of "Todo" chapters and scenes to a Markdown file."""
-        try:
-            homeDir = str(Path.home()).replace('\\', '/')
-            templateDir = f'{homeDir}/.pywriter/novelyst/templates'
-        except:
-            templateDir = '.'
         fileName = filedialog.asksaveasfilename(filetypes=self._fileTypes,
                                               defaultextension=self._fileTypes[0][1],
-                                              initialdir=templateDir)
+                                              initialdir=self._templateDir)
         if not fileName:
             return
 
@@ -99,3 +95,19 @@ class Plugin():
             messagebox.showerror(_('Cannot save template'), str(ex))
 
         self._ui.set_info_how(_('Template saved.'))
+
+    def _open_folder(self):
+        """Open the templates folder with the OS file manager."""
+        try:
+            os.startfile(norm_path(self._templateDir))
+            # Windows
+        except:
+            try:
+                os.system('xdg-open "%s"' % norm_path(self._templateDir))
+                # Linux
+            except:
+                try:
+                    os.system('open "%s"' % norm_path(self._templateDir))
+                    # Mac
+                except:
+                    pass

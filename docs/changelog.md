@@ -5,6 +5,12 @@
 ## Changelog
 
 
+### v1.1.0 
+
+- Add "open folder" command.
+
+Compatibility: novelyst v4.12 API
+
 ### v1.0.1 
 
 - When reading Markdown, discard trailing spaces.

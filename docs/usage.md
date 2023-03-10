@@ -32,6 +32,12 @@ This saves the narrative structure to a Marktown template file.
 
 ---
 
+## Open folder
+
+This opens the templates folder with the OS file manager, so you can manage and edit the templates. 
+
+---
+
 # Conventions
 
 In *novelyst*, you can define a narrative structure with "Todo" Parts, Chapters, and scenes. See [Arcs](https://peter88213.github.io/novelyst/help/arcs). *novelyst_templates* faciliates the reuse of narrative structures.

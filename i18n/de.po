@@ -3,9 +3,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: 1.0.1\n"
-"POT-Creation-Date: 2023-03-10 12:53:51\n"
-"PO-Revision-Date: 2023-03-10 12:53:52\n"
+"Project-Id-Version: 1.1.0\n"
+"POT-Creation-Date: 2023-03-10 13:36:09\n"
+"PO-Revision-Date: 2023-03-10 13:36:10\n"
 "Last-Translator: Peter Triesberger\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
@@ -27,6 +27,9 @@ msgstr "Datei nicht gefunden"
 
 msgid "Load"
 msgstr "Laden"
+
+msgid "Open folder"
+msgstr "Ordner öffnen"
 
 msgid "Save"
 msgstr "Speichern"

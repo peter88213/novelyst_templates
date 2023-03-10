@@ -3,8 +3,8 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: 1.0.1\n"
-"POT-Creation-Date: 2023-03-10 12:53:51\n"
+"Project-Id-Version: 1.1.0\n"
+"POT-Creation-Date: 2023-03-10 13:36:09\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: LANGUAGE\n"
@@ -27,6 +27,9 @@ msgid "File not found"
 msgstr ""
 
 msgid "Load"
+msgstr ""
+
+msgid "Open folder"
 msgstr ""
 
 msgid "Save"
