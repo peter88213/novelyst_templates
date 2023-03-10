@@ -77,7 +77,7 @@ The third level heading begins with `###`, followed by a space and a chapter tit
 
 ### Fourth level heading
 
-The fourth level heading begins with one `####`, followed by a space and a scene title. 
+The fourth level heading begins with `####`, followed by a space and a scene title. 
 
 - Under a chapter in the *Planning* tree, a scene signifying an arc point is created.
 
