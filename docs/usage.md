@@ -112,7 +112,7 @@ Resolution
 
 ### A-Storyline
 
-Applying a three-act structure
+Applying a three-act structure.
 
 #### Inciting Incident
 
