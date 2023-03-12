@@ -74,11 +74,12 @@ class Plugin():
         fileName = filedialog.askopenfilename(filetypes=self._fileTypes,
                                               defaultextension=self._fileTypes[0][1],
                                               initialdir=self._templateDir)
-        try:
-            templates = MdTemplate(fileName, self._ui)
-            templates.read()
-        except Error as ex:
-            messagebox.showerror(_('Template loading aborted'), str(ex))
+        if fileName:
+            try:
+                templates = MdTemplate(fileName, self._ui)
+                templates.read()
+            except Error as ex:
+                messagebox.showerror(_('Template loading aborted'), str(ex))
 
     def _save_template(self):
         """Save a structure of "Todo" chapters and scenes to a Markdown file."""

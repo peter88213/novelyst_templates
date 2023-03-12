@@ -2,9 +2,15 @@
 
 ### ACT 1
 
+Setup
+
 ### ACT 2
 
+Confrontation
+
 ### ACT 3
+
+Resolution
 
 # pl
 
@@ -12,11 +18,9 @@
 
 ### A-Storyline
 
-Applying a Three Act storyline.
+Applying a three-act structure
 
-#### Regular Life
-
-#### Inciting Event
+#### Inciting Incident
 
 #### Plot Point 1
 
@@ -25,5 +29,3 @@ Applying a Three Act storyline.
 #### Plot Point 2
 
 #### Climax
-
-#### New Life

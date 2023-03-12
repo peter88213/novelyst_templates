@@ -96,53 +96,37 @@ Any text under a heading is used as a description for the element generated from
 
 ### ACT 1
 
+Setup
+
 ### ACT 2
 
+Confrontation
+
 ### ACT 3
+
+Resolution
 
 # pl
 
 ## Arcs
 
-### A - Storyline
+### A-Storyline
 
-Applying a beat sheet as described in "Save The Cat!
-Writes A Novel" by Jessica Brody.
+Applying a three-act structure
 
-#### Opening Image
+#### Regular Life
 
-A "so far" snapshot of your hero and his world.
+#### Inciting Incident
 
-#### Theme Stated
-
-A statement from a character (usually not the hero) that
-gives a hint of what the hero's story arc is about. 
-
-#### Setup
-
-#### Catalyst
-
-#### Debate
-
-#### Break into 2
-
-#### B Story
-
-#### Fun and Games
+#### Plot Point 1
 
 #### Midpoint
 
-#### Bad Guys close in
+#### Plot Point 2
 
-#### All is lost
+#### Climax
 
-#### Dark night of the soul
-
-#### Break into 3
-
-#### Finale
-
-#### Final Image
+#### New Life
 
 ```
 

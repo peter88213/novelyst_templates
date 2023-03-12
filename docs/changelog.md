@@ -5,6 +5,13 @@
 ## Changelog
 
 
+### v1.1.1 
+
+- Abort loading silently, if no template is selected.
+- Update sample templates.
+
+Compatibility: novelyst v4.12 API
+
 ### v1.1.0 
 
 - Add "open folder" command.
