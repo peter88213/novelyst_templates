@@ -114,8 +114,6 @@ Resolution
 
 Applying a three-act structure
 
-#### Regular Life
-
 #### Inciting Incident
 
 #### Plot Point 1
@@ -125,8 +123,6 @@ Applying a three-act structure
 #### Plot Point 2
 
 #### Climax
-
-#### New Life
 
 ```
 
