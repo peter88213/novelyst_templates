@@ -19,6 +19,7 @@ class MdTemplate:
     """
     DESCRIPTION = _('Story Template')
     EXTENSION = '.md'
+    ARC_MARKER = '-'
 
     def __init__(self, filePath, ui):
         """Initialize instance variables.
@@ -70,8 +71,8 @@ class MdTemplate:
                 chId = self._ui.tv.add_chapter(title=newTitle, chType=2)
                 if chId:
                     newElement = self._ui.novel.chapters[chId]
-                    if parent == 'pl':
-                        newElement.kwVar['Field_ArcDefinition'] = newTitle[0]
+                    if parent == 'pl' and self.ARC_MARKER in newTitle:
+                        newElement.kwVar['Field_ArcDefinition'] = newTitle.split(self.ARC_MARKER, maxsplit=1)[0].strip()
             elif mdLine.startswith('##'):
                 if not parent:
                     continue

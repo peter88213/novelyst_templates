@@ -71,7 +71,7 @@ The second level heading begins with `##`, followed by a space and a part title.
 The third level heading begins with `###`, followed by a space and a chapter title. 
 
 - In the *Narrative* tree, a chapter signifying a story phase such as an act is created. 
-- In the *Planning* tree, a chapter signifying an arc is created. The arc name will be the first character of the chapter title.
+- In the *Planning* tree, a chapter is created. If the heading contains a hyphen (`-`), the chapter defines an arc. Then the arc name will be the part of the chapter title that comes before the hyphen.
 
 ---
 

@@ -5,6 +5,12 @@
 ## Changelog
 
 
+### v1.2.0 
+
+- Update the conditions for creating arc defining chapters (see instructions for use).
+
+Compatibility: novelyst v4.12 API
+
 ### v1.1.1 
 
 - Abort loading silently, if no template is selected.
