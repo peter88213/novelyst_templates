@@ -22,13 +22,13 @@ You can open the submenu with **Tools > Story Templates**.
 
 ## Load
 
-This loads the narrative structure from a Marktown template file. 
+This loads the narrative structure from a Markdown template file. 
 
 ---
 
 ## Save
 
-This saves the narrative structure to a Marktown template file. 
+This saves the narrative structure to a Markdown template file. 
 
 ---
 
