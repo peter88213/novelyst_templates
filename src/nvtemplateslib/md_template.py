@@ -15,7 +15,7 @@ class MdTemplate:
         write() -- Write instance variables to the file.
 
     Public instance variables:
-        filePath -- str: path to the file (property with getter and setter). 
+        filePath: str -- path to the file (property with getter and setter). 
     """
     DESCRIPTION = _('Story Template')
     EXTENSION = '.md'
@@ -25,7 +25,7 @@ class MdTemplate:
         """Initialize instance variables.
 
         Positional arguments:
-            filePath -- str: path to the file represented by the File instance.
+            filePath: str -- path to the file represented by the File instance.
         """
         self.filePath = filePath
         self._ui = ui
