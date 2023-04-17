@@ -25,13 +25,13 @@ In *novelyst*, you can define a narrative structure with "Todo" Parts, Chapters,
 - Extract the "novelyst_templates_v0.99.0" folder from the downloaded zipfile "novelyst_templates_v0.99.0.zip".
 - Move into this new folder and launch **setup.pyw**. This installs the plugin for the local user.
 
-## Usage
-
-See the [instructions for use](usage)
-
 ---
 
 [Changelog](changelog)
+
+## Usage
+
+See the [instructions for use](usage)
 
 ## License
 
