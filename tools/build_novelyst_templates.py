@@ -1,4 +1,4 @@
-""" Build a templates novelyst plugin.
+"""Build a templates novelyst plugin.
         
 In order to distribute a single script without dependencies, 
 this script "inlines" all modules imported from the pywriter package.
@@ -6,6 +6,7 @@ this script "inlines" all modules imported from the pywriter package.
 The PyWriter project (see https://github.com/peter88213/PyWriter)
 must be located on the same directory level as the novelyst_templates project. 
 
+Copyright (c) 2023 Peter Triesberger
 For further information see https://github.com/peter88213/novelyst_templates
 License: GNU GPLv3 (https://www.gnu.org/licenses/gpl-3.0.en.html)
 """
