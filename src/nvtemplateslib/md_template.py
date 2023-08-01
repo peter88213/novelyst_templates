@@ -112,6 +112,9 @@ class MdTemplate:
                 mdLines.append(f'## {self._ui.novel.chapters[chId].title}')
             else:
                 # chapter begins
+                if planningSection and self._ui.novel.chapters[chId].kwVar['Field_ArcDefinition'] is None:
+                    continue
+
                 if not mdLines:
                     mdLines.append('# nv')
                 mdLines.append(f'### {self._ui.novel.chapters[chId].title}')
