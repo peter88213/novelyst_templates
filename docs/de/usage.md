@@ -10,13 +10,13 @@ A [novelyst](https://peter88213.github.io/novelyst/) plugin for managing Markdow
 
 If [novelyst](https://peter88213.github.io/novelyst/) is installed, the setup script auto-installs the *novelyst_templates* plugin in the *novelyst* plugin directory.
 
-The plugin adds a **Erzählstruktur-Vorlagen** entry to the *novelyst* **Tools**-Menü, and a **Template plugin Online Help** entry to the **Help**-Menü. 
+The plugin adds a **Erzählstruktur-Vorlagen** entry to the *novelyst* **Extras**-Menü, and a **Template plugin Online Hilfe** entry to the **Hilfe**-Menü. 
 
 ---
 
 # Command reference
 
-You can open the submenu with **Tools > Erzählstruktur-Vorlagen**.
+You can open the submenu with **Extras > Erzählstruktur-Vorlagen**.
 
 ---
 
@@ -40,7 +40,7 @@ This opens the templates folder with the OS file manager, so you can manage and 
 
 # Conventions
 
-In *novelyst*, you can define a narrative structure with "Todo" Parts, Chapters, and scenes. See [Arcs](https://peter88213.github.io/novelyst/help/arcs). *novelyst_templates* faciliates the reuse of narrative structures.
+In *novelyst*, you can define a narrative structure with "Planung" Teils, Kapitels, and scenes. See [Bögen](https://peter88213.github.io/novelyst/help/arcs). *novelyst_templates* faciliates the reuse of narrative structures.
 
 ## Markdown file structure
 
@@ -53,8 +53,8 @@ The *Erzählstruktur-Vorlage* Markdown file defines such a structure with headin
 The first level heading begins with `#`, followed by a space and a title. 
 
 Two titles are allowed:
-- `nv` for the "Todo" chapters in the *Narrative* tree, signifying e.g. acts.
-- `pl` for the "Todo" parts, chapters, and scenes in the *Planning* tree, signifying story arcs and arc points.
+- `nv` for the "Planung" chapters in the *Narrative* tree, signifying e.g. acts.
+- `pl` for the "Planung" parts, chapters, and scenes in the *Planung* tree, signifying story arcs and arc points.
 
 ---
 
@@ -62,7 +62,7 @@ Two titles are allowed:
 
 The second level heading begins with `##`, followed by a space and a part title. 
 
-- One second level heading is required for creating the "Arcs" part in the *Planning* tree.
+- One second level heading is required for creating the "Bögen" part in the *Planung* tree.
 
 ---
 
@@ -71,7 +71,7 @@ The second level heading begins with `##`, followed by a space and a part title.
 The third level heading begins with `###`, followed by a space and a chapter title. 
 
 - In the *Narrative* tree, a chapter signifying a story phase such as an act is created. 
-- In the *Planning* tree, a chapter is created. If the heading contains a hyphen (`-`), the chapter defines an arc. Then the arc name will be the part of the chapter title that comes before the hyphen.
+- In the *Planung* tree, a chapter is created. If the heading contains a hyphen (`-`), the chapter defines an arc. Then the arc name will be the part of the chapter title that comes before the hyphen.
 
 ---
 
@@ -79,7 +79,7 @@ The third level heading begins with `###`, followed by a space and a chapter tit
 
 The fourth level heading begins with `####`, followed by a space and a scene title. 
 
-- Under a chapter in the *Planning* tree, a scene signifying an arc point is created.
+- Under a chapter in the *Planung* tree, a scene signifying an arc point is created.
 
 ---
 
@@ -108,11 +108,11 @@ Resolution
 
 # pl
 
-## Arcs
+## Bögen
 
 ### A-Storyline
 
-Applying a three-act structure.
+Anwendening a three-act structure.
 
 #### Inciting Incident
 
