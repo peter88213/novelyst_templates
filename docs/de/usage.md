@@ -1,16 +1,16 @@
-[Project homepage](https://peter88213.github.io/novelyst_templates)
+[Projekt-Homepage](https://peter88213.github.io/novelyst_templates) > Gebrauchsanleitung
 
 --- 
 
-A [novelyst](https://peter88213.github.io/novelyst/) plugin for managing Markdown "Erzählstruktur-Vorlagen". 
+Ein [novelyst](https://peter88213.github.io/novelyst/)-Plugin for managing Markdown "Erzählstruktur-Vorlagen". 
 
 ---
 
 # Installation
 
-If [novelyst](https://peter88213.github.io/novelyst/) is installed, the setup script auto-installs the *novelyst_templates* plugin in the *novelyst* plugin directory.
+Wenn [novelyst](https://peter88213.github.io/novelyst/) installiert ist, installiert das Setup-Skript automatisch das*novelyst_templates*-Plugin im *novelyst* Plugin-Verzeichnis.
 
-The plugin adds a **Erzählstruktur-Vorlagen** entry to the *novelyst* **Extras**-Menü, and a **Template plugin Online Hilfe** entry to the **Hilfe**-Menü. 
+Das Plugin hängt einen **Erzählstruktur-Vorlagen**-Eintrag an das *novelyst* **Extras**-Menü, und einen **Template plugin Online Hilfe**-Eintrag an das **Hilfe**-Menü an. 
 
 ---
 
@@ -132,8 +132,6 @@ This file generates the following structure:
 
 ---
 
-# License
+# Lizenz
 
-This is Open Source software, and the *novelyst_templates* plugin is licensed under GPLv3. See the
-[GNU General Public License website](https://www.gnu.org/licenses/gpl-3.0.en.html) for more
-details, or consult the [LICENSE](https://github.com/peter88213/novelyst_templates/blob/main/LICENSE) file.
+Dies ist quelloffene Software, und das *novelyst_templates*-Plugin steht unter der GPLv3-Lizenz. Für mehr Details besuchen Sie die[Website der GNU General Public License](https://www.gnu.org/licenses/gpl-3.0.de.html), oder schauen Sie sich die [LICENSE](https://github.com/peter88213/novelyst_templates/blob/main/LICENSE)-Datei an.
