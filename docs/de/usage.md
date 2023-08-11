@@ -2,7 +2,7 @@
 
 --- 
 
-Ein [novelyst](https://peter88213.github.io/novelyst/)-Plugin for managing Markdown "Erzählstruktur-Vorlagen". 
+Ein [novelyst](https://peter88213.github.io/novelyst/)-Plugin zur Verwaltung von "Erzählstruktur-Vorlagen" im Markdown-Format. 
 
 ---
 
@@ -14,43 +14,43 @@ Das Plugin hängt einen **Erzählstruktur-Vorlagen**-Eintrag an das *novelyst* *
 
 ---
 
-# Command reference
+# Befelhlsreferenz
 
-You can open the submenu with **Extras > Erzählstruktur-Vorlagen**.
+Das Untermenü mit **Extras > Erzählstruktur-Vorlagen** öffnen.
 
 ---
 
 ## Laden
 
-This loads the narrative structure from a Markdown template file. 
+Das lädt die Erzählstruktur aus einer Markdown-Vorlagendatei.
 
 ---
 
 ## Speichern
 
-This saves the narrative structure to a Markdown template file. 
+Das speichert die Erzählstruktur in eine Markdown-Vorlagendatei.
 
 ---
 
 ## Ordner öffnen
 
-This opens the templates folder with the OS file manager, so you can manage and edit the templates. 
+Das öffnet den Vorlagenordner mit dem Dateimanager des Betriebssystems, um die Vorlagen zu verwalten und zu bearbeiten.
 
 ---
 
-# Conventions
+# Konventionen
 
-In *novelyst*, you can define a narrative structure with "Planung" Teils, Kapitels, and scenes. See [Bögen](https://peter88213.github.io/novelyst/help/arcs). *novelyst_templates* faciliates the reuse of narrative structures.
+In *novelyst* kann man eine Erzählstruktur im "Planung"-Zweig, mit Kapiteln uns Abschnitten definieren. Siehe [Bögen](https://peter88213.github.io/novelyst/de/help/arcs). *novelyst_templates* erleichtert die Wiederverwendung solcher Erzählstrukturen.
 
-## Markdown file structure
+## Struktur der Markdown-Datei
 
-The *Erzählstruktur-Vorlage* Markdown file defines such a structure with headings and ordinary text.
+Die Markdown-*Erzählstruktur-Vorlage* definiert seine solche Struktur mit Überschriften und gewöhnlichem Text..
 
 ---
 
-### First level heading
+### Überschrift erster Ordnung
 
-The first level heading begins with `#`, followed by a space and a title. 
+Die Überschrift erster Ordnung beginnt mit `#`, gefolgt von einem Leerzeichen und einem Titel. 
 
 Two titles are allowed:
 - `nv` for the "Planung" chapters in the *Narrative* tree, signifying e.g. acts.
@@ -58,26 +58,26 @@ Two titles are allowed:
 
 ---
 
-### Second level heading
+### Überschrift zweiter Ordnung
 
-The second level heading begins with `##`, followed by a space and a part title. 
+Die Überschrift zweiter Ordnung beginnt mit  `##`, gefolgt von einem Leerzeichen und einem Teil-Titel.  
 
 - One second level heading is required for creating the "Bögen" part in the *Planung* tree.
 
 ---
 
-### Third level heading
+### Überschrift dritter Ordnung
 
-The third level heading begins with `###`, followed by a space and a chapter title. 
+Die Überschrift dritter Ordnung beginnt mit `###`, gefolgt von einem Leerzeichen und einem Kapiteltitel. 
 
 - In the *Narrative* tree, a chapter signifying a story phase such as an act is created. 
 - In the *Planung* tree, a chapter is created. If the heading contains a hyphen (`-`), the chapter defines an arc. Then the arc name will be the part of the chapter title that comes before the hyphen.
 
 ---
 
-### Fourth level heading
+### Überschrift vierter Ordnung
 
-The fourth level heading begins with `####`, followed by a space and a scene title. 
+Die Überschrift vierter Ordnung beginnt mit `####`, gefolgt von einem Leerzeichen und einem Abschnittstitel. 
 
 - Under a chapter in the *Planung* tree, a scene signifying an arc point is created.
 
