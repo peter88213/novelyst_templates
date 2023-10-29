@@ -39,7 +39,7 @@ class Plugin():
         enable_menu() -- enable menu entries when a project is open.    
     """
     VERSION = '@release'
-    NOVELYST_API = '4.12'
+    NOVELYST_API = '5.0'
     DESCRIPTION = 'A "Story Templates" manager'
     URL = 'https://peter88213.github.io/novelyst_templates'
     _HELP_URL = 'https://peter88213.github.io/novelyst_templates/usage'
@@ -53,7 +53,7 @@ class Plugin():
         self._ui = ui
         try:
             homeDir = str(Path.home()).replace('\\', '/')
-            self._templateDir = f'{homeDir}/.pywriter/novelyst/templates'
+            self._templateDir = f'{homeDir}/.novelyst/templates'
         except:
             self._templateDir = '.'
 
@@ -109,16 +109,19 @@ class Plugin():
 
     def _open_folder(self):
         """Open the templates folder with the OS file manager."""
-        try:
-            os.startfile(norm_path(self._templateDir))
-            # Windows
-        except:
+        if os.path.isdir(self._templateDir):
             try:
-                os.system('xdg-open "%s"' % norm_path(self._templateDir))
-                # Linux
+                os.startfile(norm_path(self._templateDir))
+                # Windows
             except:
                 try:
-                    os.system('open "%s"' % norm_path(self._templateDir))
-                    # Mac
+                    os.system('xdg-open "%s"' % norm_path(self._templateDir))
+                    # Linux
                 except:
-                    pass
+                    try:
+                        os.system('open "%s"' % norm_path(self._templateDir))
+                        # Mac
+                    except:
+                        pass
+        else:
+            self._ui.set_info_how(f"!{_('Template folder not found.')}")
