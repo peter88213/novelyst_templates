@@ -3,9 +3,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: unknown\n"
-"POT-Creation-Date: 2023-10-29 16:32:11\n"
-"PO-Revision-Date: 2023-10-29 16:32:32\n"
+"Project-Id-Version: 2.0.0\n"
+"POT-Creation-Date: 2023-10-29 20:18:09\n"
+"PO-Revision-Date: 2023-10-29 20:18:09\n"
 "Last-Translator: Peter Triesberger\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
@@ -20,7 +20,7 @@ msgid "Cannot save template"
 msgstr "Kann Vorlage nicht speichern"
 
 msgid "Cannot write file"
-msgstr "Kann datei nicht schreiben"
+msgstr "Kann Datei nicht schreiben"
 
 msgid "Chapter"
 msgstr "Kapitel"
