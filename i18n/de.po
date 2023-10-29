@@ -3,9 +3,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: 1.2.1\n"
-"POT-Creation-Date: 2023-08-01 15:52:38\n"
-"PO-Revision-Date: 2023-08-01 15:52:38\n"
+"Project-Id-Version: unknown\n"
+"POT-Creation-Date: 2023-10-29 10:41:23\n"
+"PO-Revision-Date: 2023-10-29 10:43:43\n"
 "Last-Translator: Peter Triesberger\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
@@ -34,11 +34,17 @@ msgstr "Ordner öffnen"
 msgid "Save"
 msgstr "Speichern"
 
+msgid "Stages"
+msgstr "Stadien"
+
 msgid "Story Template"
 msgstr "Erzählstruktur-Vorlage"
 
 msgid "Story Templates"
 msgstr "Erzählstruktur-Vorlagen"
+
+msgid "Template folder not found."
+msgstr "Vorlagenordner nicht gefunden"
 
 msgid "Template loading aborted"
 msgstr "Laden der Vorlage abgebrochen"
@@ -48,7 +54,4 @@ msgstr "Vorlage gespeichert"
 
 msgid "Templates plugin Online help"
 msgstr "Vorlagen-Plugin Online-Hilfe"
-
-msgid "Wrong heading"
-msgstr "Falsche Überschrift"
 

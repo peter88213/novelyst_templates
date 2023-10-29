@@ -1,17 +1,17 @@
 # novelyst_templates Dictionary
-# Copyright (C) 2022 Peter Triesberger
+# Copyright (C) 2023 Peter Triesberger
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: 1.2.1\n"
-"POT-Creation-Date: 2023-08-01 15:52:38\n"
+"Project-Id-Version: unknown\n"
+"POT-Creation-Date: 2023-10-29 10:41:23\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: LANGUAGE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: PyWriter pgettext.py 0.3\n"
+"Generated-By: novxlib pgettext.py 0.3\n"
 
 
 msgid "Cannot read file"
@@ -35,10 +35,16 @@ msgstr ""
 msgid "Save"
 msgstr ""
 
+msgid "Stages"
+msgstr ""
+
 msgid "Story Template"
 msgstr ""
 
 msgid "Story Templates"
+msgstr ""
+
+msgid "Template folder not found."
 msgstr ""
 
 msgid "Template loading aborted"
@@ -48,7 +54,4 @@ msgid "Template saved."
 msgstr ""
 
 msgid "Templates plugin Online help"
-msgstr ""
-
-msgid "Wrong heading"
 msgstr ""
