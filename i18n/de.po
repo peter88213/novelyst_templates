@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: unknown\n"
-"POT-Creation-Date: 2023-10-29 10:41:23\n"
-"PO-Revision-Date: 2023-10-29 10:43:43\n"
+"POT-Creation-Date: 2023-10-29 16:32:11\n"
+"PO-Revision-Date: 2023-10-29 16:32:32\n"
 "Last-Translator: Peter Triesberger\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
@@ -22,17 +22,26 @@ msgstr "Kann Vorlage nicht speichern"
 msgid "Cannot write file"
 msgstr "Kann datei nicht schreiben"
 
+msgid "Chapter"
+msgstr "Kapitel"
+
+msgid "Create from story structure template"
+msgstr "Aus Erzählstruktur-Vorlage erzeugen"
+
 msgid "File not found"
 msgstr "Datei nicht gefunden"
 
-msgid "Load"
-msgstr "Laden"
+msgid "Load story structure template"
+msgstr "Lade Erzählstruktur-Vorlage"
 
-msgid "Open folder"
-msgstr "Ordner öffnen"
+msgid "New Scene"
+msgstr "Neuer Abschnitt"
 
-msgid "Save"
-msgstr "Speichern"
+msgid "Open templates folder"
+msgstr "Öffne Vorlagenordner"
+
+msgid "Save story structure template"
+msgstr "Speichere Erzählstruktur-Vorlage"
 
 msgid "Stages"
 msgstr "Stadien"

@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: unknown\n"
-"POT-Creation-Date: 2023-10-29 10:41:23\n"
+"POT-Creation-Date: 2023-10-29 16:32:11\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: LANGUAGE\n"
@@ -23,16 +23,25 @@ msgstr ""
 msgid "Cannot write file"
 msgstr ""
 
+msgid "Chapter"
+msgstr ""
+
+msgid "Create from story structure template"
+msgstr ""
+
 msgid "File not found"
 msgstr ""
 
-msgid "Load"
+msgid "Load story structure template"
 msgstr ""
 
-msgid "Open folder"
+msgid "New Scene"
 msgstr ""
 
-msgid "Save"
+msgid "Open templates folder"
+msgstr ""
+
+msgid "Save story structure template"
 msgstr ""
 
 msgid "Stages"

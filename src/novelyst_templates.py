@@ -59,13 +59,12 @@ class Plugin():
 
         # Create "Story Templates" submenu.
         self._templatesMenu = tk.Menu(self._ui.toolsMenu, tearoff=0)
-        self._templatesMenu.add_command(label=_('Load'), command=self._load_template)
-        self._templatesMenu.add_command(label=_('Save'), command=self._save_template)
-        self._templatesMenu.add_command(label=_('Open folder'), command=self._open_folder)
 
         # Create "Plot" menu entry.
         self._ui.plotMenu.add_separator()
-        self._ui.plotMenu.add_cascade(label=APPLICATION, menu=self._templatesMenu)
+        self._ui.plotMenu.add_command(label=_('Load story structure template'), command=self._load_template)
+        self._ui.plotMenu.add_command(label=_('Save story structure template'), command=self._save_template)
+        self._ui.plotMenu.add_command(label=_('Open templates folder'), command=self._open_folder)
 
         # Create "New" menu entry.
         self._ui.newMenu.add_command(label=_('Create from story structure template'), command=self._new_project)
