@@ -5,6 +5,13 @@
 ## Changelog
 
 
+### v1.3.0
+
+- New Markdown format for the story structure templates, listing the stages. Each stage is converted into a "Todo" scene. 
+- When loading a template into an empty project, a whole story framework is created.
+
+Compatibility: novelyst v4.12 API
+
 ### v1.2.1
 
 - Exclude chapters in the planning section from export that have no arc definition.

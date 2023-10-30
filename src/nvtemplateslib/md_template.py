@@ -10,10 +10,6 @@ from nvtemplateslib.nvtemplates_globals import *
 class MdTemplate:
     """Markdown story template representation.
     
-    Public methods:
-        read() -- Parse the file and get the instance variables.
-        write() -- Write instance variables to the file.
-
     Public instance variables:
         filePath: str -- path to the file (property with getter and setter). 
     """
@@ -50,7 +46,7 @@ class MdTemplate:
 
     def read_novelyst4_structure(self, mdLines):
         chId = self._ui.tv.add_chapter(selection='nv', title=_('Stages'), chLevel=2, chType=2)
-        scId = chId
+        index = f'ch{chId}'
         arcSection = False
         newElement = None
         desc = []
@@ -65,16 +61,22 @@ class MdTemplate:
                     if arcSection:
                         # Add a second-level stage.
                         newTitle = mdLine[5:]
-                        scId = self._ui.tv.add_scene(selection=scId, title=newTitle, scType=2)
+                        scId = self._ui.tv.add_scene(selection=index, title=newTitle, scType=2)
                         if scId:
                             newElement = self._ui.novel.scenes[scId]
+                            index = f'sc{scId}'
+                        else:
+                            print(newTitle)
                 elif mdLine.startswith('###'):
                     if not arcSection:
                         # Add a first-level stage.
                         newTitle = mdLine[4:]
-                        scId = self._ui.tv.add_scene(selection=scId, title=newTitle, scType=2)
+                        scId = self._ui.tv.add_scene(selection=index, title=newTitle, scType=2)
                         if scId:
                             newElement = self._ui.novel.scenes[scId]
+                            index = f'sc{scId}'
+                        else:
+                            print(newTitle)
                 elif mdLine.strip() == '# pl':
                     arcSection = True
             elif mdLine:
@@ -92,7 +94,7 @@ class MdTemplate:
 
     def create_chapter_structure(self, mdLines):
         i = 0
-        chId = 'nv'
+        index = 'nv'
         addChapter = True
         newElement = None
         desc = []
@@ -100,61 +102,71 @@ class MdTemplate:
             mdLine = mdLine.strip()
             if mdLine.startswith('#'):
                 if newElement is not None:
-                    newElement.desc = '\n'.join(desc)
+                    newElement.desc = ''.join(desc).strip().replace('  ', ' ')
                     desc = []
                     newElement = None
                 if mdLine.startswith('## '):
                     # Add a 2nd level stage.
                     if addChapter:
                         i += 1
-                        chId = self._ui.tv.add_chapter(selection=chId, title=f"{_('Chapter')} {i}", chLevel=2, chType=0)
-                        scId = chId
+                        chId = self._ui.tv.add_chapter(selection=index, title=f"{_('Chapter')} {i}", chLevel=2, chType=0)
+                        index = f'ch{chId}'
                     newTitle = mdLine[3:].strip()
-                    scId = self._ui.tv.add_scene(selection=scId, title=newTitle, scType=2)
-                    scId = self._ui.tv.add_scene(selection=scId, title=_('New Scene'), scType=0, status=1)
+                    scId = self._ui.tv.add_scene(selection=index, title=newTitle, scType=2)
+                    index = f'sc{scId}'
+                    newElement = self._ui.novel.scenes[scId]
+                    scId = self._ui.tv.add_scene(selection=index, title=_('New Scene'), scType=0, status=1)
+                    index = f'sc{scId}'
                     addChapter = True
                 elif mdLine.startswith('# '):
                     # Add a ist level stage.
                     i += 1
-                    chId = self._ui.tv.add_chapter(selection=chId, title=f"{_('Chapter')} {i}", chLevel=2, chType=0)
+                    chId = self._ui.tv.add_chapter(selection=index, title=f"{_('Chapter')} {i}", chLevel=2, chType=0)
+                    index = f'ch{chId}'
                     newTitle = mdLine[2:].strip()
-                    scId = self._ui.tv.add_scene(selection=scId, title=newTitle, scType=2)
+                    scId = self._ui.tv.add_scene(selection=index, title=newTitle, scType=2)
+                    index = f'sc{scId}'
+                    newElement = self._ui.novel.scenes[scId]
                     addChapter = False
                 else:
                     scId = None
-                if scId:
-                    newElement = self._ui.novel.scenes[scId]
             elif mdLine:
-                desc.append(mdLine)
-        newElement.desc = '\n'.join(desc)
+                desc.append(f'{mdLine} ')
+            else:
+                desc.append('\n')
+        newElement.desc = ''.join(desc).strip().replace('  ', ' ')
 
     def list_stages(self, mdLines):
         chId = self._ui.tv.add_chapter(selection='nv', title=_('Stages'), chLevel=2, chType=3)
-        scId = chId
+        index = f'ch{chId}'
         newElement = None
         desc = []
         for mdLine in mdLines:
             mdLine = mdLine.strip()
             if mdLine.startswith('#'):
                 if newElement is not None:
-                    newElement.desc = '\n'.join(desc)
+                    newElement.desc = ''.join(desc).strip().replace('  ', ' ')
                     desc = []
                     newElement = None
                 if mdLine.startswith('## '):
                     # Add a 2nd level stage.
                     newTitle = mdLine[3:].strip()
-                    scId = self._ui.tv.add_stage(selection=scId, title=newTitle, stageLevel=2)
+                    scId = self._ui.tv.add_stage(selection=index, title=newTitle, stageLevel=2)
+                    index = f'sc{scId}'
                 elif mdLine.startswith('# '):
                     # Add a 1st level stage.
                     newTitle = mdLine[2:].strip()
-                    scId = self._ui.tv.add_stage(selection=scId, title=newTitle, stageLevel=1)
+                    scId = self._ui.tv.add_stage(selection=index, title=newTitle, stageLevel=1)
+                    index = f'sc{scId}'
                 else:
                     scId = None
                 if scId:
                     newElement = self._ui.novel.scenes[scId]
             elif mdLine:
-                desc.append(mdLine)
-        newElement.desc = '\n'.join(desc)
+                desc.append(f'{mdLine} ')
+            else:
+                desc.append('\n')
+        newElement.desc = ''.join(desc).strip().replace('  ', ' ')
 
     def write(self):
         """Iterate the project structure and write the new elements to a Markdown file.
@@ -163,18 +175,12 @@ class MdTemplate:
         """
         mdLines = []
         for chId in self._ui.novel.srtChapters:
-            for scId in self._ui.novel.chapters[chId]:
+            for scId in self._ui.novel.chapters[chId].srtScenes:
                 if self._ui.novel.scenes[scId].scType == 2:
                     mdLines.append(f'## {self._ui.novel.scenes[scId].title}')
                     desc = self._ui.novel.scenes[scId].desc
                     if desc:
                         mdLines.append(desc.replace('\n', '\n\n'))
-                elif self._ui.novel.scenes[scId].stageLevel == 2:
-                    mdLines.append(f'## {self._ui.novel.scenes[scId].title}')
-                    desc = self._ui.novel.scenes[scId].desc
-                    if desc:
-                        mdLines.append(desc.replace('\n', '\n\n'))
-
         content = '\n\n'.join(mdLines)
         try:
             with open(self.filePath, 'w', encoding='utf-8') as f:

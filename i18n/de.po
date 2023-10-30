@@ -3,9 +3,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: 1.2.1\n"
-"POT-Creation-Date: 2023-08-01 15:52:38\n"
-"PO-Revision-Date: 2023-08-01 15:52:38\n"
+"Project-Id-Version: 1.3.0\n"
+"POT-Creation-Date: 2023-10-30 10:22:17\n"
+"PO-Revision-Date: 2023-10-30 10:22:17\n"
 "Last-Translator: Peter Triesberger\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
@@ -22,17 +22,26 @@ msgstr "Kann Vorlage nicht speichern"
 msgid "Cannot write file"
 msgstr "Kann datei nicht schreiben"
 
+msgid "Chapter"
+msgstr "Kapitel"
+
 msgid "File not found"
 msgstr "Datei nicht gefunden"
 
 msgid "Load"
 msgstr "Laden"
 
+msgid "New Scene"
+msgstr "Neuer Abschnitt"
+
 msgid "Open folder"
 msgstr "Ordner öffnen"
 
 msgid "Save"
 msgstr "Speichern"
+
+msgid "Stages"
+msgstr "Stadien"
 
 msgid "Story Template"
 msgstr "Erzählstruktur-Vorlage"
@@ -48,7 +57,4 @@ msgstr "Vorlage gespeichert"
 
 msgid "Templates plugin Online help"
 msgstr "Vorlagen-Plugin Online-Hilfe"
-
-msgid "Wrong heading"
-msgstr "Falsche Überschrift"
 
