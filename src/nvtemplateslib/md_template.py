@@ -43,7 +43,15 @@ class MdTemplate:
         except:
             raise Error(f'{_("Cannot read file")}: "{norm_path(self.filePath)}".')
 
-        parent = None
+        if mdLines[0].startswith('# nv'):
+            self.read_novelyst4_structure(mdLines)
+        else:
+            self.read_novelyst5_structure(mdLines)
+
+    def read_novelyst4_structure(self, mdLines):
+        chId = self._ui.tv.add_chapter(selection='nv', title=_('Stages'), chLevel=2, chType=2)
+        scId = chId
+        arcSection = False
         newElement = None
         desc = []
         for mdLine in mdLines:
@@ -53,79 +61,119 @@ class MdTemplate:
                     newElement.desc = '\n'.join(desc)
                     desc = []
                     newElement = None
-            if mdLine.startswith('####'):
-                if not parent:
-                    continue
-
-                #--- Add a Todo scene.
-                newTitle = mdLine[5:]
-                scId = self._ui.tv.add_scene(title=newTitle, scType=2)
-                if scId:
-                    newElement = self._ui.novel.scenes[scId]
-            elif mdLine.startswith('###'):
-                if not parent:
-                    continue
-
-                #--- Add a Todo chapter.
-                newTitle = mdLine[4:]
-                chId = self._ui.tv.add_chapter(title=newTitle, chType=2)
-                if chId:
-                    newElement = self._ui.novel.chapters[chId]
-                    if parent == 'pl' and self.ARC_MARKER in newTitle:
-                        newElement.kwVar['Field_ArcDefinition'] = newTitle.split(self.ARC_MARKER, maxsplit=1)[0].strip()
-            elif mdLine.startswith('##'):
-                if not parent:
-                    continue
-
-                #--- Add a Todo part.
-                newTitle = mdLine[3:]
-                chId = self._ui.tv.add_part(title=newTitle, chType=2)
-                if chId:
-                    newElement = self._ui.novel.chapters[chId]
-            elif mdLine.startswith('#'):
-
-                #--- Get the parent node for the next new element.
-                parent = mdLine[2:]
-                try:
-                    self._ui.tv.tree.selection_set(parent)
-                except:
-                    raise Error(f'{_("Wrong heading")}: "{parent}"')
+                if mdLine.startswith('####'):
+                    if arcSection:
+                        # Add a second-level stage.
+                        newTitle = mdLine[5:]
+                        scId = self._ui.tv.add_scene(selection=scId, title=newTitle, scType=2)
+                        if scId:
+                            newElement = self._ui.novel.scenes[scId]
+                elif mdLine.startswith('###'):
+                    if not arcSection:
+                        # Add a first-level stage.
+                        newTitle = mdLine[4:]
+                        scId = self._ui.tv.add_scene(selection=scId, title=newTitle, scType=2)
+                        if scId:
+                            newElement = self._ui.novel.scenes[scId]
+                elif mdLine.strip() == '# pl':
+                    arcSection = True
             elif mdLine:
                 desc.append(mdLine)
+        try:
+            newElement.desc = '\n'.join(desc)
+        except AttributeError:
+            pass
+
+    def read_novelyst5_structure(self, mdLines):
+        if self._ui.novel.chapters:
+            self.list_stages(mdLines)
+        else:
+            self.create_chapter_structure(mdLines)
+
+    def create_chapter_structure(self, mdLines):
+        i = 0
+        chId = 'nv'
+        addChapter = True
+        newElement = None
+        desc = []
+        for mdLine in mdLines:
+            mdLine = mdLine.strip()
+            if mdLine.startswith('#'):
+                if newElement is not None:
+                    newElement.desc = '\n'.join(desc)
+                    desc = []
+                    newElement = None
+                if mdLine.startswith('## '):
+                    # Add a 2nd level stage.
+                    if addChapter:
+                        i += 1
+                        chId = self._ui.tv.add_chapter(selection=chId, title=f"{_('Chapter')} {i}", chLevel=2, chType=0)
+                        scId = chId
+                    newTitle = mdLine[3:].strip()
+                    scId = self._ui.tv.add_scene(selection=scId, title=newTitle, scType=2)
+                    scId = self._ui.tv.add_scene(selection=scId, title=_('New Scene'), scType=0, status=1)
+                    addChapter = True
+                elif mdLine.startswith('# '):
+                    # Add a ist level stage.
+                    i += 1
+                    chId = self._ui.tv.add_chapter(selection=chId, title=f"{_('Chapter')} {i}", chLevel=2, chType=0)
+                    newTitle = mdLine[2:].strip()
+                    scId = self._ui.tv.add_scene(selection=scId, title=newTitle, scType=2)
+                    addChapter = False
+                else:
+                    scId = None
+                if scId:
+                    newElement = self._ui.novel.scenes[scId]
+            elif mdLine:
+                desc.append(mdLine)
+        newElement.desc = '\n'.join(desc)
+
+    def list_stages(self, mdLines):
+        chId = self._ui.tv.add_chapter(selection='nv', title=_('Stages'), chLevel=2, chType=3)
+        scId = chId
+        newElement = None
+        desc = []
+        for mdLine in mdLines:
+            mdLine = mdLine.strip()
+            if mdLine.startswith('#'):
+                if newElement is not None:
+                    newElement.desc = '\n'.join(desc)
+                    desc = []
+                    newElement = None
+                if mdLine.startswith('## '):
+                    # Add a 2nd level stage.
+                    newTitle = mdLine[3:].strip()
+                    scId = self._ui.tv.add_stage(selection=scId, title=newTitle, stageLevel=2)
+                elif mdLine.startswith('# '):
+                    # Add a 1st level stage.
+                    newTitle = mdLine[2:].strip()
+                    scId = self._ui.tv.add_stage(selection=scId, title=newTitle, stageLevel=1)
+                else:
+                    scId = None
+                if scId:
+                    newElement = self._ui.novel.scenes[scId]
+            elif mdLine:
+                desc.append(mdLine)
+        newElement.desc = '\n'.join(desc)
 
     def write(self):
-        """Iterate the project structure and write "Todo" elements to a Markdown file.
+        """Iterate the project structure and write the new elements to a Markdown file.
         
         Raise the "Error" exception in case of error. 
         """
         mdLines = []
-        planningSection = False
         for chId in self._ui.novel.srtChapters:
-            if self._ui.novel.chapters[chId].chType != 2:
-                continue
-
-            if self._ui.novel.chapters[chId].chLevel == 1:
-                # part begins
-                if not planningSection:
-                    mdLines.append('# pl')
-                    planningSection = True
-                mdLines.append(f'## {self._ui.novel.chapters[chId].title}')
-            else:
-                # chapter begins
-                if planningSection and self._ui.novel.chapters[chId].kwVar['Field_ArcDefinition'] is None:
-                    continue
-
-                if not mdLines:
-                    mdLines.append('# nv')
-                mdLines.append(f'### {self._ui.novel.chapters[chId].title}')
-            desc = self._ui.novel.chapters[chId].desc
-            if desc:
-                mdLines.append(desc.replace('\n', '\n\n'))
-            for scId in self._ui.novel.chapters[chId].srtScenes:
-                mdLines.append(f'#### {self._ui.novel.scenes[scId].title}')
-                desc = self._ui.novel.scenes[scId].desc
-                if desc:
-                    mdLines.append(desc.replace('\n', '\n\n'))
+            for scId in self._ui.novel.chapters[chId]:
+                if self._ui.novel.scenes[scId].scType == 2:
+                    mdLines.append(f'## {self._ui.novel.scenes[scId].title}')
+                    desc = self._ui.novel.scenes[scId].desc
+                    if desc:
+                        mdLines.append(desc.replace('\n', '\n\n'))
+                elif self._ui.novel.scenes[scId].stageLevel == 2:
+                    mdLines.append(f'## {self._ui.novel.scenes[scId].title}')
+                    desc = self._ui.novel.scenes[scId].desc
+                    if desc:
+                        mdLines.append(desc.replace('\n', '\n\n'))
 
         content = '\n\n'.join(mdLines)
         try:

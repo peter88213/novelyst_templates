@@ -1,67 +1,57 @@
-# nv
+# Departure
 
-### Departure
+## Call to Adventure
 
-### Initiation
+## Refusal of the Call
 
-### Return
+## Supernatural Aid/Guide Appears
 
-# pl
-
-## Arcs
-
-### A-Storyline
-
-Applying a "Hero's Journey" story structure as provided by Template2Share.
-
-#### Call to Adventure
-
-#### Refusal of the Call
-
-#### Supernatural Aid/Guide Appears
-
-#### Crossing the 1st threshold
+## Crossing the 1st threshold
 
 Leaving behind the known.
 
-#### Belly of the Whale
+## Belly of the Whale
 
 Final separation between their world & new world. Lowest part/transition.
 
-#### Road of Trials/Ordeal
+# Initiation
+
+## Road of Trials/Ordeal
 
 3 tests, often fail.
 
-#### Meting with the Goddess.
+## Meeting with the Goddess.
 
 Union of Opposites, all encompassing love.
 
-#### Woman as temptress
+## Woman as temptress
 
 Revulsion to our fleshly nature. Temptations to abandon journey.
 
-#### Atonement with the father
+## Atonement with the father
 
 Meet up with the ultimate power & all is forgiven.
 
-#### Deification/Apotheosis.
+## Deification/Apotheosis.
 
 Reach a godlike state of peace fulfillment & Clarity.
 
-#### Ultimate Boon
+## Ultimate Boon
 
 Achieving the quests goal.
 
-#### Refusal of the return
+# Return
 
-#### Magic Flight
+## Refusal of the return
 
-#### Rescue from Without
+## Magic Flight
 
-#### Crossing the Return Threshold
+## Rescue from Without
 
-#### Master of Two Worlds
+## Crossing the Return Threshold
 
-#### Freedom to live without fear of death
+## Master of Two Worlds
+
+## Freedom to live without fear of death
 
 
