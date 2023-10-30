@@ -79,10 +79,10 @@ class MdTemplate:
                     arcSection = True
             elif mdLine:
                 desc.append(mdLine)
-            try:
-                newElement.desc = '\n'.join(desc)
-            except AttributeError:
-                pass
+        try:
+            newElement.desc = '\n'.join(desc)
+        except AttributeError:
+            pass
 
     def read_novelyst5_structure(self, mdLines):
         if self._ui.novel.chapters:
@@ -111,6 +111,7 @@ class MdTemplate:
                         scId = chId
                     newTitle = mdLine[3:].strip()
                     scId = self._ui.tv.add_stage(selection=scId, title=newTitle, stageLevel=2)
+                    newElement = self._ui.novel.scenes[scId]
                     scId = self._ui.tv.add_scene(selection=scId, title=_('New Scene'), scType=0, status=1)
                     addChapter = True
                 elif mdLine.startswith('# '):
@@ -119,11 +120,10 @@ class MdTemplate:
                     chId = self._ui.tv.add_chapter(selection=chId, title=f"{_('Chapter')} {i}", chLevel=2, chType=0)
                     newTitle = mdLine[2:].strip()
                     scId = self._ui.tv.add_stage(selection=chId, title=newTitle, stageLevel=1)
+                    newElement = self._ui.novel.scenes[scId]
                     addChapter = False
                 else:
                     scId = None
-                if scId:
-                    newElement = self._ui.novel.scenes[scId]
             elif mdLine:
                 desc.append(mdLine)
         newElement.desc = '\n'.join(desc)

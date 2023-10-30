@@ -38,7 +38,7 @@ if __name__ == '__main__':
     os.chdir(scriptDir)
 
     # Open a tk window.
-    root.geometry("600x150")
+    root.geometry("600x200")
     root.title(f'Install {PLUGIN}{VERSION}')
     header = Label(root, text='')
     header.pack(padx=5, pady=5)
