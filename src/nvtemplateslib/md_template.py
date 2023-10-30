@@ -58,7 +58,7 @@ class MdTemplate:
             mdLine = mdLine.strip()
             if mdLine.startswith('#'):
                 if newElement is not None:
-                    newElement.desc = '\n'.join(desc)
+                    newElement.desc = ''.join(desc).strip().replace('  ', ' ')
                     desc = []
                     newElement = None
                 if mdLine.startswith('####'):
@@ -78,9 +78,11 @@ class MdTemplate:
                 elif mdLine.strip() == '# pl':
                     arcSection = True
             elif mdLine:
-                desc.append(mdLine)
+                desc.append(f'{mdLine} ')
+            else:
+                desc.append('\n')
         try:
-            newElement.desc = '\n'.join(desc)
+            newElement.desc = ''.join(desc).strip().replace('  ', ' ')
         except AttributeError:
             pass
 
@@ -100,7 +102,7 @@ class MdTemplate:
             mdLine = mdLine.strip()
             if mdLine.startswith('#'):
                 if newElement is not None:
-                    newElement.desc = '\n'.join(desc)
+                    newElement.desc = ''.join(desc).strip().replace('  ', ' ')
                     desc = []
                     newElement = None
                 if mdLine.startswith('## '):
@@ -125,8 +127,10 @@ class MdTemplate:
                 else:
                     scId = None
             elif mdLine:
-                desc.append(mdLine)
-        newElement.desc = '\n'.join(desc)
+                desc.append(f'{mdLine} ')
+            else:
+                desc.append('\n')
+        newElement.desc = ''.join(desc).strip().replace('  ', ' ')
 
     def list_stages(self, mdLines):
         chId = self._ui.tv.add_chapter(selection=CH_ROOT, title=_('Stages'), chLevel=2, chType=3)
@@ -137,7 +141,7 @@ class MdTemplate:
             mdLine = mdLine.strip()
             if mdLine.startswith('#'):
                 if newElement is not None:
-                    newElement.desc = '\n'.join(desc)
+                    newElement.desc = ''.join(desc).strip().replace('  ', ' ')
                     desc = []
                     newElement = None
                 if mdLine.startswith('## '):
@@ -153,8 +157,10 @@ class MdTemplate:
                 if scId:
                     newElement = self._ui.novel.scenes[scId]
             elif mdLine:
-                desc.append(mdLine)
-        newElement.desc = '\n'.join(desc)
+                desc.append(f'{mdLine} ')
+            else:
+                desc.append('\n')
+        newElement.desc = ''.join(desc).strip().replace('  ', ' ')
 
     def write(self):
         """Iterate the project structure and write the new elements to a Markdown file.

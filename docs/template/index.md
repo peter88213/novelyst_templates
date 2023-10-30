@@ -8,9 +8,11 @@ The [novelyst](https://peter88213.github.io/novelyst/) Python program helps auth
 
 ## Features
 
-In *novelyst*, you can define a narrative structure with "Todo" Parts, Chapters, and scenes. See [Arcs](https://peter88213.github.io/novelyst/help/arcs). *novelyst_templates* faciliates the reuse of narrative structures.
+In *novelyst*, you can define a narrative structure with *stages* on two different levels. *novelyst_templates* faciliates the reuse of narrative structures.
 
-- Load the narrative structure from a Markdown template file. 
+- Load the narrative structure from a Markdown template file:
+    - When loading a template into an empty project, a whole story framework is created.
+    - When loading a template into a project that has already chapters, a list of stages is created in an "unused" chapter.
 - Save the narrative structure to a Markdown template file. 
 
 

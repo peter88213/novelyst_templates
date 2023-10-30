@@ -48,38 +48,15 @@ The *Story Template* Markdown file defines such a structure with headings and or
 
 ---
 
-### First level heading
+### First level heading for top level stages, e.g. acts
 
-The first level heading begins with `#`, followed by a space and a title. 
-
-Two titles are allowed:
-- `nv` for the "Todo" chapters in the *Narrative* tree, signifying e.g. acts.
-- `pl` for the "Todo" parts, chapters, and scenes in the *Planning* tree, signifying story arcs and arc points.
+The first level heading begins with `#`, followed by a space and a stage title. 
 
 ---
 
-### Second level heading
+### Second level heading for minor stages or turning points
 
-The second level heading begins with `##`, followed by a space and a part title. 
-
-- One second level heading is required for creating the "Arcs" part in the *Planning* tree.
-
----
-
-### Third level heading
-
-The third level heading begins with `###`, followed by a space and a chapter title. 
-
-- In the *Narrative* tree, a chapter signifying a story phase such as an act is created. 
-- In the *Planning* tree, a chapter is created. If the heading contains a hyphen (`-`), the chapter defines an arc. Then the arc name will be the part of the chapter title that comes before the hyphen.
-
----
-
-### Fourth level heading
-
-The fourth level heading begins with `####`, followed by a space and a scene title. 
-
-- Under a chapter in the *Planning* tree, a scene signifying an arc point is created.
+The second level heading begins with `##`, followed by a space and a stage title. 
 
 ---
 
@@ -92,41 +69,45 @@ Any text under a heading is used as a description for the element generated from
 ### Example
 
 ```
-# nv
-
-### ACT 1
+# ACT 1
 
 Setup
 
-### ACT 2
+## Inciting Incident
+
+Also called "catalyst" or "call to adventure".
+This sets the protagonist in motion.
+
+## Plot Point 1
+
+"Point of no return": The protagonist engages with the action 
+the inciting incident has created.
+
+# ACT 2
 
 Confrontation
 
-### ACT 3
+## Midpoint
+
+The main turning point. A significant event, changing the 
+development of things from good to bad, or vice versa.
+
+## Plot Point 2
+
+The aftermath of the Midpoint crisis.
+What changes the protagonist from "passenger" to "driver".  
+
+# ACT 3
 
 Resolution
 
-# pl
+## Climax
 
-## Arcs
-
-### A-Storyline
-
-Applying a three-act structure.
-
-#### Inciting Incident
-
-#### Plot Point 1
-
-#### Midpoint
-
-#### Plot Point 2
-
-#### Climax
+The final moment of the story's conflict.
 
 ```
 
-This file generates the following structure:
+This file generates the following structure in an empty project:
 
 ![Screenshot](Screenshots/structure01.png)
 
