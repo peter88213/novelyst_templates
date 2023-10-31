@@ -31,7 +31,7 @@ class MdTemplate:
         self._ui = ui
 
     def read(self):
-        """Parse the Markdown file and create parts, chapters, and scenes.
+        """Parse the Markdown file and create parts, chapters, and sections.
         
         Raise the "Error" exception in case of error. 
         """
@@ -67,14 +67,14 @@ class MdTemplate:
                         newTitle = mdLine[5:]
                         scId = self._ui.tv.add_stage(selection=scId, title=newTitle, stageLevel=2)
                         if scId:
-                            newElement = self._ui.novel.scenes[scId]
+                            newElement = self._ui.novel.sections[scId]
                 elif mdLine.startswith('###'):
                     if not arcSection:
                         # Add a first-level stage.
                         newTitle = mdLine[4:]
                         scId = self._ui.tv.add_stage(selection=scId, title=newTitle, stageLevel=1)
                         if scId:
-                            newElement = self._ui.novel.scenes[scId]
+                            newElement = self._ui.novel.sections[scId]
                 elif mdLine.strip() == '# pl':
                     arcSection = True
             elif mdLine:
@@ -113,8 +113,8 @@ class MdTemplate:
                         scId = chId
                     newTitle = mdLine[3:].strip()
                     scId = self._ui.tv.add_stage(selection=scId, title=newTitle, stageLevel=2)
-                    newElement = self._ui.novel.scenes[scId]
-                    scId = self._ui.tv.add_scene(selection=scId, title=_('New Scene'), scType=0, status=1)
+                    newElement = self._ui.novel.sections[scId]
+                    scId = self._ui.tv.add_section(selection=scId, title=_('New Section'), scType=0, status=1)
                     addChapter = True
                 elif mdLine.startswith('# '):
                     # Add a ist level stage.
@@ -122,7 +122,7 @@ class MdTemplate:
                     chId = self._ui.tv.add_chapter(selection=chId, title=f"{_('Chapter')} {i}", chLevel=2, chType=0)
                     newTitle = mdLine[2:].strip()
                     scId = self._ui.tv.add_stage(selection=chId, title=newTitle, stageLevel=1)
-                    newElement = self._ui.novel.scenes[scId]
+                    newElement = self._ui.novel.sections[scId]
                     addChapter = False
                 else:
                     scId = None
@@ -155,7 +155,7 @@ class MdTemplate:
                 else:
                     scId = None
                 if scId:
-                    newElement = self._ui.novel.scenes[scId]
+                    newElement = self._ui.novel.sections[scId]
             elif mdLine:
                 desc.append(f'{mdLine} ')
             else:
@@ -170,14 +170,14 @@ class MdTemplate:
         mdLines = []
         for chId in self._ui.novel.tree.get_children(CH_ROOT):
             for scId in self._ui.novel.tree.get_children(chId):
-                if self._ui.novel.scenes[scId].stageLevel == 1:
-                    mdLines.append(f'# {self._ui.novel.scenes[scId].title}')
-                    desc = self._ui.novel.scenes[scId].desc
+                if self._ui.novel.sections[scId].stageLevel == 1:
+                    mdLines.append(f'# {self._ui.novel.sections[scId].title}')
+                    desc = self._ui.novel.sections[scId].desc
                     if desc:
                         mdLines.append(desc.replace('\n', '\n\n'))
-                elif self._ui.novel.scenes[scId].stageLevel == 2:
-                    mdLines.append(f'## {self._ui.novel.scenes[scId].title}')
-                    desc = self._ui.novel.scenes[scId].desc
+                elif self._ui.novel.sections[scId].stageLevel == 2:
+                    mdLines.append(f'## {self._ui.novel.sections[scId].title}')
+                    desc = self._ui.novel.sections[scId].desc
                     if desc:
                         mdLines.append(desc.replace('\n', '\n\n'))
 

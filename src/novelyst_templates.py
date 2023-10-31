@@ -80,7 +80,7 @@ class Plugin():
             self._load_template()
 
     def _load_template(self):
-        """Create a structure of "Todo" chapters and scenes from a Markdown file."""
+        """Create a structure of "Todo" chapters and sections from a Markdown file."""
         fileName = filedialog.askopenfilename(filetypes=self._fileTypes,
                                               defaultextension=self._fileTypes[0][1],
                                               initialdir=self._templateDir)
@@ -92,7 +92,7 @@ class Plugin():
                 messagebox.showerror(_('Template loading aborted'), str(ex))
 
     def _save_template(self):
-        """Save a structure of "Todo" chapters and scenes to a Markdown file."""
+        """Save a structure of "Todo" chapters and sections to a Markdown file."""
         fileName = filedialog.asksaveasfilename(filetypes=self._fileTypes,
                                               defaultextension=self._fileTypes[0][1],
                                               initialdir=self._templateDir)
