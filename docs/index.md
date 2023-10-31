@@ -22,9 +22,9 @@ In *novelyst*, you can define a narrative structure with *stages* on two differe
 
 ## Download and install
 
-[Download the latest release (version 2.0.2)](https://github.com/peter88213/novelyst_templates/raw/main/dist/novelyst_templates_v2.0.2.zip)
+[Download the latest release (version 2.0.3)](https://github.com/peter88213/novelyst_templates/raw/main/dist/novelyst_templates_v2.0.3.zip)
 
-- Extract the "novelyst_templates_v2.0.2" folder from the downloaded zipfile "novelyst_templates_v2.0.2.zip".
+- Extract the "novelyst_templates_v2.0.3" folder from the downloaded zipfile "novelyst_templates_v2.0.3.zip".
 - Move into this new folder and launch **setup.pyw**. This installs the plugin for the local user.
 
 ---
