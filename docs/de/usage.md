@@ -1,85 +1,62 @@
-[Projekt-Homepage](https://peter88213.github.io/novelyst_templates) > Gebrauchsanleitung
+[Project homepage](https://peter88213.github.io/novelyst_templates) > Instructions for use
 
 --- 
 
-Ein [novelyst](https://peter88213.github.io/novelyst/)-Plugin zur Verwaltung von "Erzählstruktur-Vorlagen" im Markdown-Format. 
+A [novelyst](https://peter88213.github.io/novelyst/) plugin for managing Markdown "Story Templates". 
 
 ---
 
 # Installation
 
-Wenn [novelyst](https://peter88213.github.io/novelyst/) installiert ist, installiert das Setup-Skript automatisch das*novelyst_templates*-Plugin im *novelyst* Plugin-Verzeichnis.
+If [novelyst](https://peter88213.github.io/novelyst/) is installed, the setup script auto-installs the *novelyst_templates* plugin in the *novelyst* plugin directory.
 
-Das Plugin hängt einen **Erzählstruktur-Vorlagen**-Eintrag an das *novelyst* **Extras**-Menü, und einen **Template plugin Online Hilfe**-Eintrag an das **Hilfe**-Menü an. 
-
----
-
-# Befelhlsreferenz
-
-Das Untermenü mit **Extras > Erzählstruktur-Vorlagen** öffnen.
+The plugin adds a **Story Templates** entry to the *novelyst* **Tools** menu, and a **Template plugin Online Help** entry to the **Help** menu. 
 
 ---
 
-## Laden
+# Command reference
 
-Das lädt die Erzählstruktur aus einer Markdown-Vorlagendatei.
-
----
-
-## Speichern
-
-Das speichert die Erzählstruktur in eine Markdown-Vorlagendatei.
+You can open the submenu with **Tools > Story Templates**.
 
 ---
 
-## Ordner öffnen
+## Load
 
-Das öffnet den Vorlagenordner mit dem Dateimanager des Betriebssystems, um die Vorlagen zu verwalten und zu bearbeiten.
-
----
-
-# Konventionen
-
-In *novelyst* kann man eine Erzählstruktur im "Planung"-Zweig, mit Kapiteln uns Abschnitten definieren. Siehe [Bögen](https://peter88213.github.io/novelyst/de/help/arcs). *novelyst_templates* erleichtert die Wiederverwendung solcher Erzählstrukturen.
-
-## Struktur der Markdown-Datei
-
-Die Markdown-*Erzählstruktur-Vorlage* definiert seine solche Struktur mit Überschriften und gewöhnlichem Text..
+This loads the narrative structure from a Markdown template file. 
 
 ---
 
-### Überschrift erster Ordnung
+## Save
 
-Die Überschrift erster Ordnung beginnt mit `#`, gefolgt von einem Leerzeichen und einem Titel. 
-
-Two titles are allowed:
-- `nv` for the "Planung" chapters in the *Narrative* tree, signifying e.g. acts.
-- `pl` for the "Planung" parts, chapters, and scenes in the *Planung* tree, signifying story arcs and arc points.
+This saves the narrative structure to a Markdown template file. 
 
 ---
 
-### Überschrift zweiter Ordnung
+## Open folder
 
-Die Überschrift zweiter Ordnung beginnt mit  `##`, gefolgt von einem Leerzeichen und einem Teil-Titel.  
-
-- One second level heading is required for creating the "Bögen" part in the *Planung* tree.
+This opens the templates folder with the OS file manager, so you can manage and edit the templates. 
 
 ---
 
-### Überschrift dritter Ordnung
+# Conventions
 
-Die Überschrift dritter Ordnung beginnt mit `###`, gefolgt von einem Leerzeichen und einem Kapiteltitel. 
+In *novelyst*, you can define a narrative structure with "Todo" Parts, Chapters, and scenes. See [Arcs](https://peter88213.github.io/novelyst/help/arcs). *novelyst_templates* faciliates the reuse of narrative structures.
 
-- In the *Narrative* tree, a chapter signifying a story phase such as an act is created. 
-- In the *Planung* tree, a chapter is created. If the heading contains a hyphen (`-`), the chapter defines an arc. Then the arc name will be the part of the chapter title that comes before the hyphen.
+## Markdown file structure
+
+The *Story Template* Markdown file defines such a structure with headings and ordinary text.
 
 ---
 
-### Überschrift vierter Ordnung
+### First level heading for top level stages, e.g. acts
 
-Die Überschrift vierter Ordnung beginnt mit `####`, gefolgt von einem Leerzeichen und einem Abschnittstitel. 
+The first level heading begins with `#`, followed by a space and a stage title. 
 
-- Under a chapter in the *Planung* tree, a scene signifying an arc point is created.
+---
+
+### Second level heading for minor stages or turning points
+
+The second level heading begins with `##`, followed by a space and a stage title. 
 
 ---
 
@@ -92,46 +69,52 @@ Any text under a heading is used as a description for the element generated from
 ### Example
 
 ```
-# nv
-
-### ACT 1
+# ACT 1
 
 Setup
 
-### ACT 2
+## Inciting Incident
+
+Also called "catalyst" or "call to adventure".
+This sets the protagonist in motion.
+
+## Plot Point 1
+
+"Point of no return": The protagonist engages with the action 
+the inciting incident has created.
+
+# ACT 2
 
 Confrontation
 
-### ACT 3
+## Midpoint
+
+The main turning point. A significant event, changing the 
+development of things from good to bad, or vice versa.
+
+## Plot Point 2
+
+The aftermath of the Midpoint crisis.
+What changes the protagonist from "passenger" to "driver".  
+
+# ACT 3
 
 Resolution
 
-# pl
+## Climax
 
-## Bögen
-
-### A-Storyline
-
-Anwendening a three-act structure.
-
-#### Inciting Incident
-
-#### Plot Point 1
-
-#### Midpoint
-
-#### Plot Point 2
-
-#### Climax
+The final moment of the story's conflict.
 
 ```
 
-This file generates the following structure:
+This file generates the following structure in an empty project:
 
 ![Screenshot](Screenshots/structure01.png)
 
 ---
 
-# Lizenz
+# License
 
-Dies ist quelloffene Software, und das *novelyst_templates*-Plugin steht unter der GPLv3-Lizenz. Für mehr Details besuchen Sie die[Website der GNU General Public License](https://www.gnu.org/licenses/gpl-3.0.de.html), oder schauen Sie sich die [LICENSE](https://github.com/peter88213/novelyst_templates/blob/main/LICENSE)-Datei an.
+This is Open Source software, and the *novelyst_templates* plugin is licensed under GPLv3. See the
+[GNU General Public License website](https://www.gnu.org/licenses/gpl-3.0.en.html) for more
+details, or consult the [LICENSE](https://github.com/peter88213/novelyst_templates/blob/main/LICENSE) file.
