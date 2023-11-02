@@ -15,7 +15,7 @@ class MdTemplate:
     """
     DESCRIPTION = _('Story Template')
     EXTENSION = '.md'
-    ARC_MARKER = '-'
+    STAGE_MARKER = 'stage'
 
     def __init__(self, filePath, ui):
         """Initialize instance variables.
@@ -112,7 +112,7 @@ class MdTemplate:
                         chId = self._ui.tv.add_chapter(selection=index, title=f"{_('Chapter')} {i}", chLevel=2, chType=0)
                         index = f'ch{chId}'
                     newTitle = mdLine[3:].strip()
-                    scId = self._ui.tv.add_scene(selection=index, title=newTitle, scType=2, tags=['stage'])
+                    scId = self._ui.tv.add_scene(selection=index, title=newTitle, scType=2, tags=[self.STAGE_MARKER])
                     index = f'sc{scId}'
                     newElement = self._ui.novel.scenes[scId]
                     scId = self._ui.tv.add_scene(selection=index, title=_('New Scene'), scType=0, status=1)
@@ -124,7 +124,7 @@ class MdTemplate:
                     chId = self._ui.tv.add_chapter(selection=index, title=f"{_('Chapter')} {i}", chLevel=2, chType=0)
                     index = f'ch{chId}'
                     newTitle = mdLine[2:].strip()
-                    scId = self._ui.tv.add_scene(selection=index, title=newTitle, scType=2)
+                    scId = self._ui.tv.add_scene(selection=index, title=newTitle, scType=2, tags=[self.STAGE_MARKER])
                     index = f'sc{scId}'
                     newElement = self._ui.novel.scenes[scId]
                     addChapter = False
@@ -151,12 +151,12 @@ class MdTemplate:
                 if mdLine.startswith('## '):
                     # Add a 2nd level stage.
                     newTitle = mdLine[3:].strip()
-                    scId = self._ui.tv.add_scene(selection=index, title=newTitle, tags=['stage'])
+                    scId = self._ui.tv.add_scene(selection=index, title=newTitle, tags=[self.STAGE_MARKER])
                     index = f'sc{scId}'
                 elif mdLine.startswith('# '):
                     # Add a 1st level stage.
                     newTitle = mdLine[2:].strip()
-                    scId = self._ui.tv.add_scene(selection=index, title=newTitle, tags=['stage'])
+                    scId = self._ui.tv.add_scene(selection=index, title=newTitle, tags=[self.STAGE_MARKER])
                     index = f'sc{scId}'
                 else:
                     scId = None
@@ -177,7 +177,7 @@ class MdTemplate:
         for chId in self._ui.novel.srtChapters:
             for scId in self._ui.novel.chapters[chId].srtScenes:
                 if self._ui.novel.scenes[scId].scType == 2:
-                    if 'stage' in self._ui.novel.scenes[scId].tags:
+                    if self.STAGE_MARKER in self._ui.novel.scenes[scId].tags:
                         mdLines.append(f'## {self._ui.novel.scenes[scId].title}')
                         desc = self._ui.novel.scenes[scId].desc
                         if desc:

@@ -22,9 +22,9 @@ In *novelyst*, you can define a story structure with "Todo" scenes. *novelyst_te
 
 ## Download and install
 
-[Download the latest release (version 1.4.0)](https://github.com/peter88213/novelyst_templates/raw/main/dist/novelyst_templates_v1.4.0.zip)
+[Download the latest release (version 1.4.1)](https://github.com/peter88213/novelyst_templates/raw/main/dist/novelyst_templates_v1.4.1.zip)
 
-- Extract the "novelyst_templates_v1.4.0" folder from the downloaded zipfile "novelyst_templates_v1.4.0.zip".
+- Extract the "novelyst_templates_v1.4.1" folder from the downloaded zipfile "novelyst_templates_v1.4.1.zip".
 - Move into this new folder and launch **setup.pyw**. This installs the plugin for the local user.
 
 ---

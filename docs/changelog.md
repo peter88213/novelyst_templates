@@ -5,6 +5,12 @@
 ## Changelog
 
 
+### v1.4.1
+
+- Fix a bug where the "stage" tag is missing for first level stages in new projects.
+
+Compatibility: novelyst v4.45 API
+
 ### v1.4.0
 
 - Fix a regression from v1.3.0 where no stages are imported into projects that already have chapters.
