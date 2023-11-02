@@ -5,6 +5,13 @@
 ## Changelog
 
 
+### v1.4.0
+
+- Fix a regression from v1.3.0 where no stages are imported into projects that already have chapters.
+- Only "Todo" scenes with the "stage" tag are exported as stages.
+
+Compatibility: novelyst v4.45 API
+
 ### v1.3.0
 
 - New Markdown format for the story structure templates, listing the stages. Each stage is converted into a "Todo" scene. 

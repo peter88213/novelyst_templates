@@ -39,7 +39,7 @@ class Plugin():
         enable_menu() -- enable menu entries when a project is open.    
     """
     VERSION = '@release'
-    NOVELYST_API = '4.12'
+    NOVELYST_API = '4.45'
     DESCRIPTION = 'A "Story Templates" manager'
     URL = 'https://peter88213.github.io/novelyst_templates'
     _HELP_URL = 'https://peter88213.github.io/novelyst_templates/usage'

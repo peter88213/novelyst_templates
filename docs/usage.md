@@ -22,13 +22,13 @@ You can open the submenu with **Tools > Story Templates**.
 
 ## Load
 
-This loads the narrative structure from a Markdown template file. 
+This loads the story structure from a Markdown template file. 
 
 ---
 
 ## Save
 
-This saves the narrative structure to a Markdown template file. 
+This saves the story structure to a Markdown template file. 
 
 ---
 
@@ -40,7 +40,10 @@ This opens the templates folder with the OS file manager, so you can manage and 
 
 # Conventions
 
-In *novelyst*, you can define a narrative structure with "Todo" Parts, Chapters, and scenes. See [Arcs](https://peter88213.github.io/novelyst/help/arcs). *novelyst_templates* faciliates the reuse of narrative structures.
+In *novelyst*, you can define stages of your story structure model with "Todo" scenes that are tagged with "stage". 
+*novelyst_templates* faciliates the reuse of story structures.
+
+Only "Todo" scenes with the "stage" tag are exported as stages.
 
 ## Markdown file structure
 

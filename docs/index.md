@@ -8,23 +8,23 @@ The [novelyst](https://peter88213.github.io/novelyst/) Python program helps auth
 
 ## Features
 
-In *novelyst*, you can define a narrative structure with "Todo" scenes. *novelyst_templates* faciliates the reuse of narrative structures.velyst_templates* faciliates the reuse of narrative structures.
+In *novelyst*, you can define a story structure with "Todo" scenes. *novelyst_templates* faciliates the reuse of story structures.
 
-- Load the narrative structure from a Markdown template file. Each stage is converted into a "Todo" scene:
+- Load the story structure model from a Markdown template file. Each stage is converted into a "Todo" scene with a "stage" tag:
     - When loading a template into an empty project, a whole story framework is created.
     - When loading a template into a project that has already chapters, a list of stages is created in a "Todo" chapter.
-- Save the narrative structure to a Markdown template file. 
+- Save the story structure to a Markdown template file. 
 
 
 ## Requirements
 
-- [novelyst](https://peter88213.github.io/novelyst/) version 4.12+
+- [novelyst](https://peter88213.github.io/novelyst/) version 4.45+
 
 ## Download and install
 
-[Download the latest release (version 1.3.0)](https://github.com/peter88213/novelyst_templates/raw/main/dist/novelyst_templates_v1.3.0.zip)
+[Download the latest release (version 1.4.0)](https://github.com/peter88213/novelyst_templates/raw/main/dist/novelyst_templates_v1.4.0.zip)
 
-- Extract the "novelyst_templates_v1.3.0" folder from the downloaded zipfile "novelyst_templates_v1.3.0.zip".
+- Extract the "novelyst_templates_v1.4.0" folder from the downloaded zipfile "novelyst_templates_v1.4.0.zip".
 - Move into this new folder and launch **setup.pyw**. This installs the plugin for the local user.
 
 ---
