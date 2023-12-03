@@ -1,10 +1,10 @@
 #!/usr/bin/python3
-"""Install the novelyst_templates plugin. 
+"""Install the nv_templates plugin. 
 
 Version @release
 
 Copyright (c) 2023 Peter Triesberger
-For further information see https://github.com/peter88213/novelyst_templates
+For further information see https://github.com/peter88213/noveltree_templates
 License: GNU GPLv3 (https://www.gnu.org/licenses/gpl-3.0.en.html)
 """
 import os
@@ -18,7 +18,7 @@ except ModuleNotFoundError:
     print('The tkinter module is missing. Please install the tk support package for your python3 version.')
     sys.exit(1)
 
-PLUGIN = 'novelyst_templates.py'
+PLUGIN = 'nv_templates.py'
 VERSION = ' @release'
 SAMPLE_PATH = 'sample'
 

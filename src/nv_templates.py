@@ -1,4 +1,4 @@
-"""A "Story Templates" plugin for novelyst.
+"""A "Story Templates" plugin for noveltree.
 
 Version @release
 
@@ -8,7 +8,7 @@ The selected theme will be persistently applied.
 
 Requires Python 3.6+
 Copyright (c) 2023 Peter Triesberger
-For further information see https://github.com/peter88213/novelyst_templates
+For further information see https://github.com/peter88213/noveltree_templates
 License: GNU GPLv3 (https://www.gnu.org/licenses/gpl-3.0.en.html)
 
 This program is free software: you can redistribute it and/or modify
@@ -41,8 +41,8 @@ class Plugin():
     VERSION = '@release'
     NOVELYST_API = '5.0'
     DESCRIPTION = 'A "Story Templates" manager'
-    URL = 'https://peter88213.github.io/novelyst_templates'
-    _HELP_URL = 'https://peter88213.github.io/novelyst_templates/usage'
+    URL = 'https://peter88213.github.io/noveltree_templates'
+    _HELP_URL = 'https://peter88213.github.io/noveltree_templates/usage'
 
     def install(self, ui):
         """Add a submenu to the 'Tools' menu.
@@ -53,34 +53,34 @@ class Plugin():
         self._ui = ui
         try:
             homeDir = str(Path.home()).replace('\\', '/')
-            self._templateDir = f'{homeDir}/.novelyst/templates'
+            self._templateDir = f'{homeDir}/.noveltree/templates'
         except:
             self._templateDir = '.'
 
         # Create "Story Templates" submenu.
         self._templatesMenu = tk.Menu(self._ui.toolsMenu, tearoff=0)
+        self._templatesMenu.add_command(label=_('Load'), command=self._load_template)
+        self._templatesMenu.add_command(label=_('Save'), command=self._save_template)
+        self._templatesMenu.add_command(label=_('Open folder'), command=self._open_folder)
 
-        # Create "Plot" menu entry.
-        self._ui.plotMenu.add_separator()
-        self._ui.plotMenu.add_command(label=_('Load story structure template'), command=self._load_template)
-        self._ui.plotMenu.add_command(label=_('Save story structure template'), command=self._save_template)
-        self._ui.plotMenu.add_command(label=_('Open templates folder'), command=self._open_folder)
-
-        # Create "New" menu entry.
-        self._ui.newMenu.add_command(label=_('Create from story structure template'), command=self._new_project)
-
+        # Create Tools menu entry.
+        self._ui.toolsMenu.add_cascade(label=APPLICATION, menu=self._templatesMenu)
+        self._ui.toolsMenu.entryconfig(APPLICATION, state='disabled')
         self._fileTypes = [(MdTemplate.DESCRIPTION, MdTemplate.EXTENSION)]
 
         # Add an entry to the Help menu.
         self._ui.helpMenu.add_command(label=_('Templates plugin Online help'), command=lambda: webbrowser.open(self._HELP_URL))
 
-    def _new_project(self):
-        self._ui.new_project()
-        if self._ui.prjFile is not None:
-            self._load_template()
+    def disable_menu(self):
+        """Disable menu entries when no project is open."""
+        self._ui.toolsMenu.entryconfig(APPLICATION, state='disabled')
+
+    def enable_menu(self):
+        """Enable menu entries when a project is open."""
+        self._ui.toolsMenu.entryconfig(APPLICATION, state='normal')
 
     def _load_template(self):
-        """Create a structure of "Todo" chapters and sections from a Markdown file."""
+        """Create a structure of "Todo" chapters and scenes from a Markdown file."""
         fileName = filedialog.askopenfilename(filetypes=self._fileTypes,
                                               defaultextension=self._fileTypes[0][1],
                                               initialdir=self._templateDir)
@@ -92,7 +92,7 @@ class Plugin():
                 messagebox.showerror(_('Template loading aborted'), str(ex))
 
     def _save_template(self):
-        """Save a structure of "Todo" chapters and sections to a Markdown file."""
+        """Save a structure of "Todo" chapters and scenes to a Markdown file."""
         fileName = filedialog.asksaveasfilename(filetypes=self._fileTypes,
                                               defaultextension=self._fileTypes[0][1],
                                               initialdir=self._templateDir)
@@ -109,19 +109,16 @@ class Plugin():
 
     def _open_folder(self):
         """Open the templates folder with the OS file manager."""
-        if os.path.isdir(self._templateDir):
+        try:
+            os.startfile(norm_path(self._templateDir))
+            # Windows
+        except:
             try:
-                os.startfile(norm_path(self._templateDir))
-                # Windows
+                os.system('xdg-open "%s"' % norm_path(self._templateDir))
+                # Linux
             except:
                 try:
-                    os.system('xdg-open "%s"' % norm_path(self._templateDir))
-                    # Linux
+                    os.system('open "%s"' % norm_path(self._templateDir))
+                    # Mac
                 except:
-                    try:
-                        os.system('open "%s"' % norm_path(self._templateDir))
-                        # Mac
-                    except:
-                        pass
-        else:
-            self._ui.set_info_how(f"!{_('Template folder not found.')}")
+                    pass

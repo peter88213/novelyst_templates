@@ -1,14 +1,14 @@
-[Project homepage](https://peter88213.github.io/novelyst_templates) > Instructions for use
+[Project homepage](https://peter88213.github.io/noveltree_templates) > Instructions for use
 
 --- 
 
-A [novelyst](https://peter88213.github.io/novelyst/) plugin for managing Markdown "Story Templates". 
+A [novelyst](https://peter88213.github.io/noveltree/) plugin for managing Markdown "Story Templates". 
 
 ---
 
 # Installation
 
-If [novelyst](https://peter88213.github.io/novelyst/) is installed, the setup script auto-installs the *novelyst_templates* plugin in the *novelyst* plugin directory.
+If [novelyst](https://peter88213.github.io/noveltree/) is installed, the setup script auto-installs the *novelyst_templates* plugin in the *novelyst* plugin directory.
 
 The plugin adds a **Story Templates** entry to the *novelyst* **Tools** menu, and a **Template plugin Online Help** entry to the **Help** menu. 
 
@@ -40,7 +40,7 @@ This opens the templates folder with the OS file manager, so you can manage and 
 
 # Conventions
 
-In *novelyst*, you can define a narrative structure with "Todo" Parts, Chapters, and scenes. See [Arcs](https://peter88213.github.io/novelyst/help/arcs). *novelyst_templates* faciliates the reuse of narrative structures.
+In *novelyst*, you can define a narrative structure with "Todo" Parts, Chapters, and scenes. See [Arcs](https://peter88213.github.io/noveltree/help/arcs). *novelyst_templates* faciliates the reuse of narrative structures.
 
 ## Markdown file structure
 
@@ -117,4 +117,4 @@ This file generates the following structure in an empty project:
 
 This is Open Source software, and the *novelyst_templates* plugin is licensed under GPLv3. See the
 [GNU General Public License website](https://www.gnu.org/licenses/gpl-3.0.en.html) for more
-details, or consult the [LICENSE](https://github.com/peter88213/novelyst_templates/blob/main/LICENSE) file.
+details, or consult the [LICENSE](https://github.com/peter88213/noveltree_templates/blob/main/LICENSE) file.

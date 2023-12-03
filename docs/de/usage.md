@@ -1,14 +1,14 @@
-[Projekt-Homepage](https://peter88213.github.io/novelyst_templates) > Gebrauchsanleitung
+[Projekt-Homepage](https://peter88213.github.io/noveltree_templates) > Gebrauchsanleitung
 
 --- 
 
-Ein [novelyst](https://peter88213.github.io/novelyst/)-Plugin zur Verwaltung von "Erzählstruktur-Vorlagen" im Markdown-Format. 
+Ein [novelyst](https://peter88213.github.io/noveltree/)-Plugin zur Verwaltung von "Erzählstruktur-Vorlagen" im Markdown-Format. 
 
 ---
 
 # Installation
 
-Wenn [novelyst](https://peter88213.github.io/novelyst/) installiert ist, installiert das Setup-Skript automatisch das*novelyst_templates*-Plugin im *novelyst* Plugin-Verzeichnis.
+Wenn [novelyst](https://peter88213.github.io/noveltree/) installiert ist, installiert das Setup-Skript automatisch das*novelyst_templates*-Plugin im *novelyst* Plugin-Verzeichnis.
 
 Das Plugin hängt einen **Erzählstruktur-Vorlagen**-Eintrag an das *novelyst* **Extras**-Menü, und einen **Template plugin Online Hilfe**-Eintrag an das **Hilfe**-Menü an. 
 
@@ -40,7 +40,7 @@ Das öffnet den Vorlagenordner mit dem Dateimanager des Betriebssystems, um die 
 
 # Konventionen
 
-In *novelyst* kann man eine Erzählstruktur im "Planung"-Zweig, mit Kapiteln uns Abschnitten definieren. Siehe [Bögen](https://peter88213.github.io/novelyst/de/help/arcs). *novelyst_templates* erleichtert die Wiederverwendung solcher Erzählstrukturen.
+In *novelyst* kann man eine Erzählstruktur im "Planung"-Zweig, mit Kapiteln uns Abschnitten definieren. Siehe [Bögen](https://peter88213.github.io/noveltree/de/help/arcs). *novelyst_templates* erleichtert die Wiederverwendung solcher Erzählstrukturen.
 
 ## Struktur der Markdown-Datei
 
@@ -134,4 +134,4 @@ This file generates the following structure:
 
 # Lizenz
 
-Dies ist quelloffene Software, und das *novelyst_templates*-Plugin steht unter der GPLv3-Lizenz. Für mehr Details besuchen Sie die[Website der GNU General Public License](https://www.gnu.org/licenses/gpl-3.0.de.html), oder schauen Sie sich die [LICENSE](https://github.com/peter88213/novelyst_templates/blob/main/LICENSE)-Datei an.
+Dies ist quelloffene Software, und das *novelyst_templates*-Plugin steht unter der GPLv3-Lizenz. Für mehr Details besuchen Sie die[Website der GNU General Public License](https://www.gnu.org/licenses/gpl-3.0.de.html), oder schauen Sie sich die [LICENSE](https://github.com/peter88213/noveltree_templates/blob/main/LICENSE)-Datei an.
