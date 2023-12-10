@@ -14,7 +14,7 @@ File structure:
 │   └── src/
 │       ├── translations.py
 │       └── msgfmt.py
-└── novelyst_templates/
+└── noveltree_templates/
     ├── src/ 
     ├── tools/ 
     │   └── translate_de.py
@@ -28,7 +28,7 @@ File structure:
         └── plugin_locale/
             └─ de/
                └─ LC_MESSAGES/
-                  └─ novelyst_templates.mo
+                  └─ noveltree_templates.mo
     
 Copyright (c) 2023 Peter Triesberger
 For further information see https://github.com/peter88213/noveltree_templates
@@ -36,12 +36,12 @@ License: GNU GPLv3 (https://www.gnu.org/licenses/gpl-3.0.en.html)
 """
 import os
 import sys
-sys.path.insert(0, f'{os.getcwd()}/../../novxlib/src')
+sys.path.insert(0, f'{os.getcwd()}/../../novxlib-Alpha/src')
 import translations
 from shutil import copyfile
 import msgfmt
 
-APP_NAME = 'novelyst_templates'
+APP_NAME = 'nv_templates'
 PO_PATH = '../i18n/de.po'
 MO_PATH = f'../i18n/locale/de/LC_MESSAGES/{APP_NAME}.mo'
 MO_COPY = f'../../kalliope/src/locale/de/LC_MESSAGES/{APP_NAME}.mo'

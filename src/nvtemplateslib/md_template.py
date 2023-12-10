@@ -44,11 +44,11 @@ class MdTemplate:
             raise Error(f'{_("Cannot read file")}: "{norm_path(self.filePath)}".')
 
         if mdLines[0].startswith('# nv'):
-            self.read_novelyst4_structure(mdLines)
+            self.read_noveltree4_structure(mdLines)
         else:
-            self.read_novelyst5_structure(mdLines)
+            self.read_noveltree5_structure(mdLines)
 
-    def read_novelyst4_structure(self, mdLines):
+    def read_noveltree4_structure(self, mdLines):
         chId = self._ui.tv.add_chapter(selection=CH_ROOT, title=_('Stages'), chLevel=2, chType=3)
         scId = chId
         arcSection = False
@@ -86,7 +86,7 @@ class MdTemplate:
         except AttributeError:
             pass
 
-    def read_novelyst5_structure(self, mdLines):
+    def read_noveltree5_structure(self, mdLines):
         if self._ui.novel.chapters:
             self.list_stages(mdLines)
         else:

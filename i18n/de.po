@@ -1,11 +1,11 @@
-# novelyst_templates Dictionary (English-German)
+# nv_templates Dictionary (English-German)
 # Copyright (C) 2022 Peter Triesberger
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: 2.0.3\n"
-"POT-Creation-Date: 2023-10-31 19:51:19\n"
-"PO-Revision-Date: 2023-10-31 19:51:19\n"
+"Project-Id-Version: 2.0.4\n"
+"POT-Creation-Date: 2023-12-10 14:36:55\n"
+"PO-Revision-Date: 2023-12-10 14:36:56\n"
 "Last-Translator: Peter Triesberger\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
@@ -25,23 +25,20 @@ msgstr "Kann Datei nicht schreiben"
 msgid "Chapter"
 msgstr "Kapitel"
 
-msgid "Create from story structure template"
-msgstr "Aus Erzählstruktur-Vorlage erzeugen"
-
 msgid "File not found"
 msgstr "Datei nicht gefunden"
 
-msgid "Load story structure template"
-msgstr "Lade Erzählstruktur-Vorlage"
+msgid "Load"
+msgstr "Laden"
 
 msgid "New Section"
 msgstr "Neuer Abschnitt"
 
-msgid "Open templates folder"
-msgstr "Öffne Vorlagenordner"
+msgid "Open folder"
+msgstr "Ordner öffnen"
 
-msgid "Save story structure template"
-msgstr "Speichere Erzählstruktur-Vorlage"
+msgid "Save"
+msgstr "Speichern"
 
 msgid "Stages"
 msgstr "Stadien"
@@ -51,9 +48,6 @@ msgstr "Erzählstruktur-Vorlage"
 
 msgid "Story Templates"
 msgstr "Erzählstruktur-Vorlagen"
-
-msgid "Template folder not found."
-msgstr "Vorlagenordner nicht gefunden"
 
 msgid "Template loading aborted"
 msgstr "Laden der Vorlage abgebrochen"
