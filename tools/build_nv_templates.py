@@ -18,7 +18,7 @@ import inliner
 SRC = '../src/'
 BUILD = '../test/'
 SOURCE_FILE = f'{SRC}nv_templates.py'
-TARGET_FILE = f'{BUILD}noveltree_templates.py'
+TARGET_FILE = f'{BUILD}nv_templates.py'
 
 
 def main():

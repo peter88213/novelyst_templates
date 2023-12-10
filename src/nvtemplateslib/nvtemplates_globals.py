@@ -44,7 +44,7 @@ except:
     # Fallback for old Windows versions.
     CURRENT_LANGUAGE = locale.getdefaultlocale()[0][:2]
 try:
-    t = gettext.translation('noveltree_templates', LOCALE_PATH, languages=[CURRENT_LANGUAGE])
+    t = gettext.translation('nv_templates', LOCALE_PATH, languages=[CURRENT_LANGUAGE])
     _ = t.gettext
 except:
 
