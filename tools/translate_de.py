@@ -14,24 +14,20 @@ File structure:
 │   └── src/
 │       ├── translations.py
 │       └── msgfmt.py
-└── noveltree_templates/
+└── nv_templates/
     ├── src/ 
     ├── tools/ 
     │   └── translate_de.py
     └── i18n/
         ├── messages.pot
         ├── de.po
-        ├── locale/
-        │   └─ de/
-        │      └─ LC_MESSAGES/
-        │         └─ novxlib.mo
-        └── plugin_locale/
+        └── locale/
             └─ de/
                └─ LC_MESSAGES/
-                  └─ noveltree_templates.mo
+                  └─ nv_templates.mo
     
 Copyright (c) 2023 Peter Triesberger
-For further information see https://github.com/peter88213/noveltree_templates
+For further information see https://github.com/peter88213/nv_templates
 License: GNU GPLv3 (https://www.gnu.org/licenses/gpl-3.0.en.html)
 """
 import os

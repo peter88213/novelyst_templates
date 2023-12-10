@@ -1,4 +1,4 @@
-[Projekt-Homepage](https://peter88213.github.io/noveltree_templates) > Gebrauchsanleitung
+[Projekt-Homepage](https://peter88213.github.io/nv_templates) > Gebrauchsanleitung
 
 --- 
 
@@ -8,7 +8,7 @@ Ein [noveltree](https://peter88213.github.io/noveltree/)-Plugin zur Verwaltung v
 
 # Installation
 
-Wenn [noveltree](https://peter88213.github.io/noveltree/) installiert ist, installiert das Setup-Skript automatisch das*noveltree_templates*-Plugin im *noveltree* Plugin-Verzeichnis.
+Wenn [noveltree](https://peter88213.github.io/noveltree/) installiert ist, installiert das Setup-Skript automatisch das*nv_templates*-Plugin im *noveltree* Plugin-Verzeichnis.
 
 Das Plugin hängt einen **Erzählstruktur-Vorlagen**-Eintrag an das *noveltree* **Extras**-Menü, und einen **Template plugin Online Hilfe**-Eintrag an das **Hilfe**-Menü an. 
 
@@ -40,7 +40,7 @@ Das öffnet den Vorlagenordner mit dem Dateimanager des Betriebssystems, um die 
 
 # Konventionen
 
-In *noveltree* kann man eine Erzählstruktur im "Planung"-Zweig, mit Kapiteln uns Abschnitten definieren. Siehe [Bögen](https://peter88213.github.io/noveltree/de/help/arcs). *noveltree_templates* erleichtert die Wiederverwendung solcher Erzählstrukturen.
+In *noveltree* kann man eine Erzählstruktur im "Planung"-Zweig, mit Kapiteln uns Abschnitten definieren. Siehe [Bögen](https://peter88213.github.io/noveltree/de/help/arcs). *nv_templates* erleichtert die Wiederverwendung solcher Erzählstrukturen.
 
 ## Struktur der Markdown-Datei
 
@@ -134,4 +134,4 @@ This file generates the following structure:
 
 # Lizenz
 
-Dies ist quelloffene Software, und das *noveltree_templates*-Plugin steht unter der GPLv3-Lizenz. Für mehr Details besuchen Sie die[Website der GNU General Public License](https://www.gnu.org/licenses/gpl-3.0.de.html), oder schauen Sie sich die [LICENSE](https://github.com/peter88213/noveltree_templates/blob/main/LICENSE)-Datei an.
+Dies ist quelloffene Software, und das *nv_templates*-Plugin steht unter der GPLv3-Lizenz. Für mehr Details besuchen Sie die[Website der GNU General Public License](https://www.gnu.org/licenses/gpl-3.0.de.html), oder schauen Sie sich die [LICENSE](https://github.com/peter88213/nv_templates/blob/main/LICENSE)-Datei an.

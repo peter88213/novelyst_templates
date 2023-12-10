@@ -1,4 +1,4 @@
-[Project homepage](https://peter88213.github.io/noveltree_templates) > Instructions for use
+[Project homepage](https://peter88213.github.io/nv_templates) > Instructions for use
 
 --- 
 
@@ -8,7 +8,7 @@ A [noveltree](https://peter88213.github.io/noveltree/) plugin for managing Markd
 
 # Installation
 
-If [noveltree](https://peter88213.github.io/noveltree/) is installed, the setup script auto-installs the *noveltree_templates* plugin in the *noveltree* plugin directory.
+If [noveltree](https://peter88213.github.io/noveltree/) is installed, the setup script auto-installs the *nv_templates* plugin in the *noveltree* plugin directory.
 
 The plugin adds a **Story Templates** entry to the *noveltree* **Tools** menu, and a **Template plugin Online Help** entry to the **Help** menu. 
 
@@ -40,7 +40,7 @@ This opens the templates folder with the OS file manager, so you can manage and 
 
 # Conventions
 
-In *noveltree*, you can define a narrative structure with "Todo" Parts, Chapters, and scenes. See [Arcs](https://peter88213.github.io/noveltree/help/arcs). *noveltree_templates* faciliates the reuse of narrative structures.
+In *noveltree*, you can define a narrative structure with "Todo" Parts, Chapters, and scenes. See [Arcs](https://peter88213.github.io/noveltree/help/arcs). *nv_templates* faciliates the reuse of narrative structures.
 
 ## Markdown file structure
 
@@ -115,6 +115,6 @@ This file generates the following structure in an empty project:
 
 # License
 
-This is Open Source software, and the *noveltree_templates* plugin is licensed under GPLv3. See the
+This is Open Source software, and the *nv_templates* plugin is licensed under GPLv3. See the
 [GNU General Public License website](https://www.gnu.org/licenses/gpl-3.0.en.html) for more
-details, or consult the [LICENSE](https://github.com/peter88213/noveltree_templates/blob/main/LICENSE) file.
+details, or consult the [LICENSE](https://github.com/peter88213/nv_templates/blob/main/LICENSE) file.

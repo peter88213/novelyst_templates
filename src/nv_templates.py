@@ -8,7 +8,7 @@ The selected theme will be persistently applied.
 
 Requires Python 3.6+
 Copyright (c) 2023 Peter Triesberger
-For further information see https://github.com/peter88213/noveltree_templates
+For further information see https://github.com/peter88213/nv_templates
 License: GNU GPLv3 (https://www.gnu.org/licenses/gpl-3.0.en.html)
 
 This program is free software: you can redistribute it and/or modify
@@ -39,10 +39,10 @@ class Plugin():
         enable_menu() -- enable menu entries when a project is open.    
     """
     VERSION = '@release'
-    NOVELYST_API = '5.0'
+    NOVELYST_API = '0.1'
     DESCRIPTION = 'A "Story Templates" manager'
-    URL = 'https://peter88213.github.io/noveltree_templates'
-    _HELP_URL = 'https://peter88213.github.io/noveltree_templates/usage'
+    URL = 'https://peter88213.github.io/nv_templates'
+    _HELP_URL = 'https://peter88213.github.io/nv_templates/usage'
 
     def install(self, ui):
         """Add a submenu to the 'Tools' menu.

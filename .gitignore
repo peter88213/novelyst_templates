@@ -1,5 +1,5 @@
 /build/
 *.pyc
 *.bak
-/test/noveltree_templates.py
+/test/nv_templates.py
 /test/yw7/
