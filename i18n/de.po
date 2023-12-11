@@ -3,9 +3,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: 2.0.6\n"
-"POT-Creation-Date: 2023-12-10 20:11:24\n"
-"PO-Revision-Date: 2023-12-10 20:11:24\n"
+"Project-Id-Version: 2.1.0\n"
+"POT-Creation-Date: 2023-12-11 09:58:11\n"
+"PO-Revision-Date: 2023-12-11 09:58:11\n"
 "Last-Translator: Peter Triesberger\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
@@ -24,6 +24,9 @@ msgstr "Kann Datei nicht schreiben"
 
 msgid "Chapter"
 msgstr "Kapitel"
+
+msgid "Create from template"
+msgstr "Aus Vorlage erzeugen"
 
 msgid "File not found"
 msgstr "Datei nicht gefunden"

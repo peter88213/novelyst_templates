@@ -62,6 +62,7 @@ class Plugin():
         self._templatesMenu.add_command(label=_('Load'), command=self._load_template)
         self._templatesMenu.add_command(label=_('Save'), command=self._save_template)
         self._templatesMenu.add_command(label=_('Open folder'), command=self._open_folder)
+        self._ui.newMenu.add_command(label=_('Create from template'), command=self._new_project)
 
         # Create Tools menu entry.
         self._ui.toolsMenu.add_cascade(label=APPLICATION, menu=self._templatesMenu)
@@ -91,21 +92,10 @@ class Plugin():
             except Error as ex:
                 messagebox.showerror(_('Template loading aborted'), str(ex))
 
-    def _save_template(self):
-        """Save a structure of "Todo" chapters and scenes to a Markdown file."""
-        fileName = filedialog.asksaveasfilename(filetypes=self._fileTypes,
-                                              defaultextension=self._fileTypes[0][1],
-                                              initialdir=self._templateDir)
-        if not fileName:
-            return
-
-        try:
-            templates = MdTemplate(fileName, self._ui)
-            templates.write()
-        except Error as ex:
-            messagebox.showerror(_('Cannot save template'), str(ex))
-
-        self._ui.set_info_how(_('Template saved.'))
+    def _new_project(self):
+        """Create a noveltree project instance."""
+        self._ui.new_project()
+        self._load_template()
 
     def _open_folder(self):
         """Open the templates folder with the OS file manager."""
@@ -122,3 +112,20 @@ class Plugin():
                     # Mac
                 except:
                     pass
+
+    def _save_template(self):
+        """Save a structure of "Todo" chapters and scenes to a Markdown file."""
+        fileName = filedialog.asksaveasfilename(filetypes=self._fileTypes,
+                                              defaultextension=self._fileTypes[0][1],
+                                              initialdir=self._templateDir)
+        if not fileName:
+            return
+
+        try:
+            templates = MdTemplate(fileName, self._ui)
+            templates.write()
+        except Error as ex:
+            messagebox.showerror(_('Cannot save template'), str(ex))
+
+        self._ui.set_info_how(_('Template saved.'))
+

@@ -16,23 +16,31 @@ The plugin adds a **Story Templates** entry to the *noveltree* **Tools** menu, a
 
 # Command reference
 
-You can open the submenu with **Tools > Story Templates**.
+## File > New
+
+### Create from template
+
+This creates a new project with the narrative structure from a Markdown template file. 
 
 ---
 
-## Load
+## Tools > Story Templates
+
+---
+
+### Load
 
 This loads the narrative structure from a Markdown template file. 
 
 ---
 
-## Save
+### Save
 
 This saves the narrative structure to a Markdown template file. 
 
 ---
 
-## Open folder
+### Open folder
 
 This opens the templates folder with the OS file manager, so you can manage and edit the templates. 
 
