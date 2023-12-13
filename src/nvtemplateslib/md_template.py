@@ -49,7 +49,7 @@ class MdTemplate:
             self.read_noveltree_structure(mdLines)
 
     def read_novelyst_structure(self, mdLines):
-        chId = self._ui.add_chapter(targetNode=CH_ROOT, title=_('Stages'), chLevel=2, chType=3)
+        chId = self._ui.c_add_chapter(targetNode=CH_ROOT, title=_('Stages'), chLevel=2, chType=3)
         scId = chId
         arcSection = False
         newElement = None
@@ -65,14 +65,14 @@ class MdTemplate:
                     if arcSection:
                         # Add a second-level stage.
                         newTitle = mdLine[5:]
-                        scId = self._ui.add_stage(targetNode=scId, title=newTitle, scType=3)
+                        scId = self._ui.c_add_stage(targetNode=scId, title=newTitle, scType=3)
                         if scId:
                             newElement = self._ui.novel.sections[scId]
                 elif mdLine.startswith('###'):
                     if not arcSection:
                         # Add a first-level stage.
                         newTitle = mdLine[4:]
-                        scId = self._ui.add_stage(targetNode=scId, title=newTitle, scType=2)
+                        scId = self._ui.c_add_stage(targetNode=scId, title=newTitle, scType=2)
                         if scId:
                             newElement = self._ui.novel.sections[scId]
                 elif mdLine.strip() == '# pl':
@@ -109,19 +109,19 @@ class MdTemplate:
                     # Add a 2nd level stage.
                     if addChapter:
                         i += 1
-                        chId = self._ui.add_chapter(targetNode=chId, title=f"{_('Chapter')} {i}", chLevel=2, chType=0)
+                        chId = self._ui.c_add_chapter(targetNode=chId, title=f"{_('Chapter')} {i}", chLevel=2, chType=0)
                         scId = chId
                     newTitle = mdLine[3:].strip()
-                    scId = self._ui.add_stage(targetNode=scId, title=newTitle, scType=3)
+                    scId = self._ui.c_add_stage(targetNode=scId, title=newTitle, scType=3)
                     newElement = self._ui.novel.sections[scId]
-                    scId = self._ui.add_section(targetNode=scId, title=_('New Section'), scType=0, status=1)
+                    scId = self._ui.c_add_section(targetNode=scId, title=_('New Section'), scType=0, status=1)
                     addChapter = True
                 elif mdLine.startswith('# '):
                     # Add a ist level stage.
                     i += 1
-                    chId = self._ui.add_chapter(targetNode=chId, title=f"{_('Chapter')} {i}", chLevel=2, chType=0)
+                    chId = self._ui.c_add_chapter(targetNode=chId, title=f"{_('Chapter')} {i}", chLevel=2, chType=0)
                     newTitle = mdLine[2:].strip()
-                    scId = self._ui.add_stage(targetNode=chId, title=newTitle, stageLevel=1)
+                    scId = self._ui.c_add_stage(targetNode=chId, title=newTitle, stageLevel=1)
                     newElement = self._ui.novel.sections[scId]
                     addChapter = False
                 else:
@@ -133,7 +133,7 @@ class MdTemplate:
         newElement.desc = ''.join(desc).strip().replace('  ', ' ')
 
     def list_stages(self, mdLines):
-        chId = self._ui.add_chapter(targetNode=CH_ROOT, title=_('Stages'), chLevel=2, chType=3)
+        chId = self._ui.c_add_chapter(targetNode=CH_ROOT, title=_('Stages'), chLevel=2, chType=3)
         scId = chId
         newElement = None
         desc = []
@@ -147,11 +147,11 @@ class MdTemplate:
                 if mdLine.startswith('## '):
                     # Add a 2nd level stage.
                     newTitle = mdLine[3:].strip()
-                    scId = self._ui.add_stage(targetNode=scId, title=newTitle, scType=3)
+                    scId = self._ui.c_add_stage(targetNode=scId, title=newTitle, scType=3)
                 elif mdLine.startswith('# '):
                     # Add a 1st level stage.
                     newTitle = mdLine[2:].strip()
-                    scId = self._ui.add_stage(targetNode=scId, title=newTitle, scType=2)
+                    scId = self._ui.c_add_stage(targetNode=scId, title=newTitle, scType=2)
                 else:
                     scId = None
                 if scId:
