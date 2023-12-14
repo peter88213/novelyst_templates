@@ -39,7 +39,7 @@ class Plugin():
         enable_menu() -- enable menu entries when a project is open.    
     """
     VERSION = '@release'
-    NOVELYST_API = '0.3'
+    NOVELYST_API = '0.4'
     DESCRIPTION = 'A "Story Templates" manager'
     URL = 'https://peter88213.github.io/nv_templates'
     _HELP_URL = 'https://peter88213.github.io/nv_templates/usage'
@@ -96,7 +96,6 @@ class Plugin():
         """Create a noveltree project instance."""
         self._ui.new_project()
         self._load_template()
-        self._ui.tv.show_branch(CH_ROOT)
 
     def _open_folder(self):
         """Open the templates folder with the OS file manager."""
