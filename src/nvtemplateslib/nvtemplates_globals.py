@@ -9,19 +9,20 @@ import sys
 import gettext
 import locale
 
-__all__ = ['Error',
-           '_',
-           'norm_path',
-           'LOCALE_PATH',
-           'CURRENT_LANGUAGE',
-           'APPLICATION',
-           'PLUGIN',
-           'ROOT_PREFIX',
-           'ARC_PREFIX',
-           'ARC_POINT_PREFIX',
-           'CHAPTER_PREFIX',
-           'CH_ROOT',
-           'AC_ROOT',
+__all__ = [
+    'Error',
+    '_',
+    'norm_path',
+    'LOCALE_PATH',
+    'CURRENT_LANGUAGE',
+    'APPLICATION',
+    'PLUGIN',
+    'ROOT_PREFIX',
+    'ARC_PREFIX',
+    'ARC_POINT_PREFIX',
+    'CHAPTER_PREFIX',
+    'CH_ROOT',
+    'AC_ROOT',
            ]
 ROOT_PREFIX = 'rt'
 CHAPTER_PREFIX = 'ch'

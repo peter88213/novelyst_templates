@@ -32,25 +32,22 @@ from nvtemplateslib.md_template import MdTemplate
 
 
 class Plugin():
-    """A 'Story Templates' plugin class.
-    
-    Public methods:
-        disable_menu() -- disable menu entries when no project is open.
-        enable_menu() -- enable menu entries when a project is open.    
-    """
+    """A 'Story Templates' plugin class."""
     VERSION = '@release'
-    NOVELYST_API = '0.4'
+    NOVELYST_API = '0.6'
     DESCRIPTION = 'A "Story Templates" manager'
     URL = 'https://peter88213.github.io/nv_templates'
     _HELP_URL = 'https://peter88213.github.io/nv_templates/usage'
 
-    def install(self, ui):
+    def install(self, controller, ui):
         """Add a submenu to the 'Tools' menu.
         
         Positional arguments:
-            ui -- reference to the NoveltreeUi instance of the application.
+            controller -- reference to the main controller instance of the application.
+            ui -- reference to the main view instance of the application.
         """
         self._ui = ui
+        self._controller = controller
         try:
             homeDir = str(Path.home()).replace('\\', '/')
             self._templateDir = f'{homeDir}/.noveltree/templates'
@@ -89,14 +86,14 @@ class Plugin():
                                               initialdir=self._templateDir)
         if fileName:
             try:
-                templates = MdTemplate(fileName, self._ui)
+                templates = MdTemplate(fileName, self._controller, self._ui)
                 templates.read()
             except Error as ex:
                 messagebox.showerror(_('Template loading aborted'), str(ex))
 
     def _new_project(self):
         """Create a noveltree project instance."""
-        self._ui.new_project()
+        self._controller.new_project()
         self._load_template()
 
     def _open_folder(self):
