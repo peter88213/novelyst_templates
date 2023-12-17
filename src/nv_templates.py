@@ -62,7 +62,9 @@ class Plugin():
         self._templatesMenu.add_command(label=_('Load'), command=self._load_template)
         self._templatesMenu.add_command(label=_('Save'), command=self._save_template)
         self._templatesMenu.add_command(label=_('Open folder'), command=self._open_folder)
-        self._ui.newMenu.add_command(label=_('Create from template'), command=self._new_project)
+
+        # Add an entry to the "File > New" menu.
+        self._ui.newMenu.add_command(label=_('Create from template...'), command=self._new_project)
 
         # Create Tools menu entry.
         self._ui.toolsMenu.add_cascade(label=APPLICATION, menu=self._templatesMenu)

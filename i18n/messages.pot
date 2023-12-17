@@ -3,8 +3,8 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: 2.4.0\n"
-"POT-Creation-Date: 2023-12-14 16:26:51\n"
+"Project-Id-Version: 2.4.1\n"
+"POT-Creation-Date: 2023-12-17 10:16:30\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: LANGUAGE\n"
@@ -26,7 +26,7 @@ msgstr ""
 msgid "Chapter"
 msgstr ""
 
-msgid "Create from template"
+msgid "Create from template..."
 msgstr ""
 
 msgid "File not found"
