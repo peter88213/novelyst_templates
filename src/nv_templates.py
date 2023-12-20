@@ -22,13 +22,19 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 """
 import os
-import tkinter as tk
-import webbrowser
-from tkinter import messagebox
-from tkinter import filedialog
 from pathlib import Path
-from nvtemplateslib.nvtemplates_globals import *
+from tkinter import filedialog
+from tkinter import messagebox
+import webbrowser
+
 from nvtemplateslib.md_template import MdTemplate
+from nvtemplateslib.nvtemplates_globals import Error
+from nvtemplateslib.nvtemplates_globals import _
+from nvtemplateslib.nvtemplates_globals import norm_path
+import tkinter as tk
+
+APPLICATION = _('Story Templates')
+PLUGIN = f'{APPLICATION} plugin @release'
 
 
 class Plugin():
@@ -39,7 +45,7 @@ class Plugin():
     URL = 'https://peter88213.github.io/nv_templates'
     _HELP_URL = 'https://peter88213.github.io/nv_templates/usage'
 
-    def install(self, controller, ui):
+    def install(self, controller, ui, prefs):
         """Add a submenu to the 'Tools' menu.
         
         Positional arguments:

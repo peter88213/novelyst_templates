@@ -9,27 +9,9 @@ import sys
 import gettext
 import locale
 
-__all__ = [
-    'Error',
-    '_',
-    'norm_path',
-    'LOCALE_PATH',
-    'CURRENT_LANGUAGE',
-    'APPLICATION',
-    'PLUGIN',
-    'ROOT_PREFIX',
-    'ARC_PREFIX',
-    'ARC_POINT_PREFIX',
-    'CHAPTER_PREFIX',
-    'CH_ROOT',
-    'AC_ROOT',
-           ]
 ROOT_PREFIX = 'rt'
 CHAPTER_PREFIX = 'ch'
-ARC_PREFIX = 'ac'
-ARC_POINT_PREFIX = 'ap'
 CH_ROOT = f'{ROOT_PREFIX}{CHAPTER_PREFIX}'
-AC_ROOT = f'{ROOT_PREFIX}{ARC_PREFIX}'
 
 
 class Error(Exception):
@@ -51,9 +33,6 @@ except:
 
     def _(message):
         return message
-
-APPLICATION = _('Story Templates')
-PLUGIN = f'{APPLICATION} plugin @release'
 
 
 def norm_path(path):
