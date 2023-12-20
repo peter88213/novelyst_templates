@@ -45,7 +45,7 @@ class Plugin():
     URL = 'https://peter88213.github.io/nv_templates'
     _HELP_URL = 'https://peter88213.github.io/nv_templates/usage'
 
-    def install(self, controller, ui, prefs):
+    def install(self, model, ui, controller, prefs):
         """Add a submenu to the 'Tools' menu.
         
         Positional arguments:
