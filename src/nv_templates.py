@@ -132,5 +132,5 @@ class Plugin():
         except Error as ex:
             messagebox.showerror(_('Cannot save template'), str(ex))
 
-        self._ui.set_info_how(_('Template saved.'))
+        self._ui.set_status(_('Template saved.'))
 
