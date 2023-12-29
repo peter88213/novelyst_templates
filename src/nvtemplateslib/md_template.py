@@ -20,15 +20,17 @@ class MdTemplate:
     EXTENSION = '.md'
     ARC_MARKER = '-'
 
-    def __init__(self, filePath, controller, ui):
+    def __init__(self, filePath, model, controller):
         """Initialize instance variables.
 
         Positional arguments:
             filePath: str -- path to the file represented by the File instance.
+            model -- Reference to the model instance of the application.
+            controller -- Reference to the main controller instance of the application.
         """
         self.filePath = filePath
+        self._model = model
         self._controller = controller
-        self._ui = ui
 
     def read(self):
         """Parse the Markdown file and create parts, chapters, and sections.
@@ -67,14 +69,14 @@ class MdTemplate:
                         newTitle = mdLine[5:]
                         scId = self._controller.c_add_stage(targetNode=scId, title=newTitle, scType=3)
                         if scId:
-                            newElement = self._controller.novel.sections[scId]
+                            newElement = self._model.novel.sections[scId]
                 elif mdLine.startswith('###'):
                     if not arcSection:
                         # Add a first-level stage.
                         newTitle = mdLine[4:]
                         scId = self._controller.c_add_stage(targetNode=scId, title=newTitle, scType=2)
                         if scId:
-                            newElement = self._controller.novel.sections[scId]
+                            newElement = self._model.novel.sections[scId]
                 elif mdLine.strip() == '# pl':
                     arcSection = True
             elif mdLine:
@@ -87,7 +89,7 @@ class MdTemplate:
             pass
 
     def read_noveltree_structure(self, mdLines):
-        if self._controller.novel.chapters:
+        if self._model.novel.chapters:
             self.list_stages(mdLines)
         else:
             self.create_chapter_structure(mdLines)
@@ -113,7 +115,7 @@ class MdTemplate:
                         scId = chId
                     newTitle = mdLine[3:].strip()
                     scId = self._controller.c_add_stage(targetNode=scId, title=newTitle, scType=3)
-                    newElement = self._controller.novel.sections[scId]
+                    newElement = self._model.novel.sections[scId]
                     scId = self._controller.c_add_section(targetNode=scId, title=_('New Section'), scType=0, status=1)
                     addChapter = True
                 elif mdLine.startswith('# '):
@@ -122,7 +124,7 @@ class MdTemplate:
                     chId = self._controller.c_add_chapter(targetNode=chId, title=f"{_('Chapter')} {i}", chLevel=2, chType=0)
                     newTitle = mdLine[2:].strip()
                     scId = self._controller.c_add_stage(targetNode=chId, title=newTitle, stageLevel=1)
-                    newElement = self._controller.novel.sections[scId]
+                    newElement = self._model.novel.sections[scId]
                     addChapter = False
                 else:
                     scId = None
@@ -130,7 +132,10 @@ class MdTemplate:
                 desc.append(f'{mdLine} ')
             else:
                 desc.append('\n')
-        newElement.desc = ''.join(desc).strip().replace('  ', ' ')
+        try:
+            newElement.desc = ''.join(desc).strip().replace('  ', ' ')
+        except AttributeError:
+            pass
 
     def list_stages(self, mdLines):
         chId = self._controller.c_add_chapter(targetNode=CH_ROOT, title=_('Stages'), chLevel=2, chType=3)
@@ -155,12 +160,15 @@ class MdTemplate:
                 else:
                     scId = None
                 if scId:
-                    newElement = self._controller.novel.sections[scId]
+                    newElement = self._model.novel.sections[scId]
             elif mdLine:
                 desc.append(f'{mdLine} ')
             else:
                 desc.append('\n')
-        newElement.desc = ''.join(desc).strip().replace('  ', ' ')
+        try:
+            newElement.desc = ''.join(desc).strip().replace('  ', ' ')
+        except AttributeError:
+            pass
 
     def write(self):
         """Iterate the project structure and write the new elements to a Markdown file.
@@ -168,16 +176,16 @@ class MdTemplate:
         Raise the "Error" exception in case of error. 
         """
         mdLines = []
-        for chId in self._controller.novel.tree.get_children(CH_ROOT):
-            for scId in self._controller.novel.tree.get_children(chId):
-                if self._controller.novel.sections[scId].scType == 2:
-                    mdLines.append(f'# {self._controller.novel.sections[scId].title}')
-                    desc = self._controller.novel.sections[scId].desc
+        for chId in self._model.novel.tree.get_children(CH_ROOT):
+            for scId in self._model.novel.tree.get_children(chId):
+                if self._model.novel.sections[scId].scType == 2:
+                    mdLines.append(f'# {self._model.novel.sections[scId].title}')
+                    desc = self._model.novel.sections[scId].desc
                     if desc:
                         mdLines.append(desc.replace('\n', '\n\n'))
-                elif self._controller.novel.sections[scId].scType == 3:
-                    mdLines.append(f'## {self._controller.novel.sections[scId].title}')
-                    desc = self._controller.novel.sections[scId].desc
+                elif self._model.novel.sections[scId].scType == 3:
+                    mdLines.append(f'## {self._model.novel.sections[scId].title}')
+                    desc = self._model.novel.sections[scId].desc
                     if desc:
                         mdLines.append(desc.replace('\n', '\n\n'))
 

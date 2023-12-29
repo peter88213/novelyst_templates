@@ -40,7 +40,7 @@ PLUGIN = f'{APPLICATION} plugin @release'
 class Plugin():
     """A 'Story Templates' plugin class."""
     VERSION = '@release'
-    NOVELYST_API = '0.6'
+    NOVELYST_API = '0.7'
     DESCRIPTION = 'A "Story Templates" manager'
     URL = 'https://peter88213.github.io/nv_templates'
     _HELP_URL = 'https://peter88213.github.io/nv_templates/usage'
@@ -49,9 +49,11 @@ class Plugin():
         """Add a submenu to the 'Tools' menu.
         
         Positional arguments:
-            controller -- reference to the main controller instance of the application.
-            ui -- reference to the main view instance of the application.
+            model -- Reference to the model instance of the application.
+            ui -- Reference to the main view instance of the application.
+            controller -- Reference to the main controller instance of the application.
         """
+        self._model = model
         self._ui = ui
         self._controller = controller
         try:
@@ -92,14 +94,14 @@ class Plugin():
                                               initialdir=self._templateDir)
         if fileName:
             try:
-                templates = MdTemplate(fileName, self._controller, self._ui)
+                templates = MdTemplate(fileName, self._model, self._controller)
                 templates.read()
             except Error as ex:
                 messagebox.showerror(_('Template loading aborted'), str(ex))
 
     def _new_project(self):
         """Create a noveltree project instance."""
-        self._controller.new_project()
+        self._controller.c_new_project()
         self._load_template()
 
     def _open_folder(self):
@@ -127,7 +129,7 @@ class Plugin():
             return
 
         try:
-            templates = MdTemplate(fileName, self._ui)
+            templates = MdTemplate(fileName, self._model, self._controller)
             templates.write()
         except Error as ex:
             messagebox.showerror(_('Cannot save template'), str(ex))
