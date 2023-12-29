@@ -53,9 +53,9 @@ class Plugin():
             ui -- Reference to the main view instance of the application.
             controller -- Reference to the main controller instance of the application.
         """
-        self._model = model
+        self._mdl = model
         self._ui = ui
-        self._controller = controller
+        self._ctrl = controller
         try:
             homeDir = str(Path.home()).replace('\\', '/')
             self._templateDir = f'{homeDir}/.noveltree/templates'
@@ -94,14 +94,14 @@ class Plugin():
                                               initialdir=self._templateDir)
         if fileName:
             try:
-                templates = MdTemplate(fileName, self._model, self._controller)
+                templates = MdTemplate(fileName, self._mdl, self._ctrl)
                 templates.read()
             except Error as ex:
                 messagebox.showerror(_('Template loading aborted'), str(ex))
 
     def _new_project(self):
         """Create a noveltree project instance."""
-        self._controller.c_new_project()
+        self._ctrl.c_new_project()
         self._load_template()
 
     def _open_folder(self):
@@ -129,7 +129,7 @@ class Plugin():
             return
 
         try:
-            templates = MdTemplate(fileName, self._model, self._controller)
+            templates = MdTemplate(fileName, self._mdl, self._ctrl)
             templates.write()
         except Error as ex:
             messagebox.showerror(_('Cannot save template'), str(ex))

@@ -29,8 +29,8 @@ class MdTemplate:
             controller -- Reference to the main controller instance of the application.
         """
         self.filePath = filePath
-        self._model = model
-        self._controller = controller
+        self._mdl = model
+        self._ctrl = controller
 
     def read(self):
         """Parse the Markdown file and create parts, chapters, and sections.
@@ -51,7 +51,7 @@ class MdTemplate:
             self.read_noveltree_structure(mdLines)
 
     def read_novelyst_structure(self, mdLines):
-        chId = self._controller.c_add_chapter(targetNode=CH_ROOT, title=_('Stages'), chLevel=2, chType=3)
+        chId = self._ctrl.c_add_chapter(targetNode=CH_ROOT, title=_('Stages'), chLevel=2, chType=3)
         scId = chId
         arcSection = False
         newElement = None
@@ -67,16 +67,16 @@ class MdTemplate:
                     if arcSection:
                         # Add a second-level stage.
                         newTitle = mdLine[5:]
-                        scId = self._controller.c_add_stage(targetNode=scId, title=newTitle, scType=3)
+                        scId = self._ctrl.c_add_stage(targetNode=scId, title=newTitle, scType=3)
                         if scId:
-                            newElement = self._model.novel.sections[scId]
+                            newElement = self._mdl.novel.sections[scId]
                 elif mdLine.startswith('###'):
                     if not arcSection:
                         # Add a first-level stage.
                         newTitle = mdLine[4:]
-                        scId = self._controller.c_add_stage(targetNode=scId, title=newTitle, scType=2)
+                        scId = self._ctrl.c_add_stage(targetNode=scId, title=newTitle, scType=2)
                         if scId:
-                            newElement = self._model.novel.sections[scId]
+                            newElement = self._mdl.novel.sections[scId]
                 elif mdLine.strip() == '# pl':
                     arcSection = True
             elif mdLine:
@@ -89,7 +89,7 @@ class MdTemplate:
             pass
 
     def read_noveltree_structure(self, mdLines):
-        if self._model.novel.chapters:
+        if self._mdl.novel.chapters:
             self.list_stages(mdLines)
         else:
             self.create_chapter_structure(mdLines)
@@ -111,20 +111,20 @@ class MdTemplate:
                     # Add a 2nd level stage.
                     if addChapter:
                         i += 1
-                        chId = self._controller.c_add_chapter(targetNode=chId, title=f"{_('Chapter')} {i}", chLevel=2, chType=0)
+                        chId = self._ctrl.c_add_chapter(targetNode=chId, title=f"{_('Chapter')} {i}", chLevel=2, chType=0)
                         scId = chId
                     newTitle = mdLine[3:].strip()
-                    scId = self._controller.c_add_stage(targetNode=scId, title=newTitle, scType=3)
-                    newElement = self._model.novel.sections[scId]
-                    scId = self._controller.c_add_section(targetNode=scId, title=_('New Section'), scType=0, status=1)
+                    scId = self._ctrl.c_add_stage(targetNode=scId, title=newTitle, scType=3)
+                    newElement = self._mdl.novel.sections[scId]
+                    scId = self._ctrl.c_add_section(targetNode=scId, title=_('New Section'), scType=0, status=1)
                     addChapter = True
                 elif mdLine.startswith('# '):
                     # Add a ist level stage.
                     i += 1
-                    chId = self._controller.c_add_chapter(targetNode=chId, title=f"{_('Chapter')} {i}", chLevel=2, chType=0)
+                    chId = self._ctrl.c_add_chapter(targetNode=chId, title=f"{_('Chapter')} {i}", chLevel=2, chType=0)
                     newTitle = mdLine[2:].strip()
-                    scId = self._controller.c_add_stage(targetNode=chId, title=newTitle, stageLevel=1)
-                    newElement = self._model.novel.sections[scId]
+                    scId = self._ctrl.c_add_stage(targetNode=chId, title=newTitle, stageLevel=1)
+                    newElement = self._mdl.novel.sections[scId]
                     addChapter = False
                 else:
                     scId = None
@@ -138,7 +138,7 @@ class MdTemplate:
             pass
 
     def list_stages(self, mdLines):
-        chId = self._controller.c_add_chapter(targetNode=CH_ROOT, title=_('Stages'), chLevel=2, chType=3)
+        chId = self._ctrl.c_add_chapter(targetNode=CH_ROOT, title=_('Stages'), chLevel=2, chType=3)
         scId = chId
         newElement = None
         desc = []
@@ -152,15 +152,15 @@ class MdTemplate:
                 if mdLine.startswith('## '):
                     # Add a 2nd level stage.
                     newTitle = mdLine[3:].strip()
-                    scId = self._controller.c_add_stage(targetNode=scId, title=newTitle, scType=3)
+                    scId = self._ctrl.c_add_stage(targetNode=scId, title=newTitle, scType=3)
                 elif mdLine.startswith('# '):
                     # Add a 1st level stage.
                     newTitle = mdLine[2:].strip()
-                    scId = self._controller.c_add_stage(targetNode=scId, title=newTitle, scType=2)
+                    scId = self._ctrl.c_add_stage(targetNode=scId, title=newTitle, scType=2)
                 else:
                     scId = None
                 if scId:
-                    newElement = self._model.novel.sections[scId]
+                    newElement = self._mdl.novel.sections[scId]
             elif mdLine:
                 desc.append(f'{mdLine} ')
             else:
@@ -176,16 +176,16 @@ class MdTemplate:
         Raise the "Error" exception in case of error. 
         """
         mdLines = []
-        for chId in self._model.novel.tree.get_children(CH_ROOT):
-            for scId in self._model.novel.tree.get_children(chId):
-                if self._model.novel.sections[scId].scType == 2:
-                    mdLines.append(f'# {self._model.novel.sections[scId].title}')
-                    desc = self._model.novel.sections[scId].desc
+        for chId in self._mdl.novel.tree.get_children(CH_ROOT):
+            for scId in self._mdl.novel.tree.get_children(chId):
+                if self._mdl.novel.sections[scId].scType == 2:
+                    mdLines.append(f'# {self._mdl.novel.sections[scId].title}')
+                    desc = self._mdl.novel.sections[scId].desc
                     if desc:
                         mdLines.append(desc.replace('\n', '\n\n'))
-                elif self._model.novel.sections[scId].scType == 3:
-                    mdLines.append(f'## {self._model.novel.sections[scId].title}')
-                    desc = self._model.novel.sections[scId].desc
+                elif self._mdl.novel.sections[scId].scType == 3:
+                    mdLines.append(f'## {self._mdl.novel.sections[scId].title}')
+                    desc = self._mdl.novel.sections[scId].desc
                     if desc:
                         mdLines.append(desc.replace('\n', '\n\n'))
 
