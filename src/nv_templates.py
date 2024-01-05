@@ -89,9 +89,11 @@ class Plugin():
 
     def _load_template(self):
         """Create a structure of "Todo" chapters and scenes from a Markdown file."""
-        fileName = filedialog.askopenfilename(filetypes=self._fileTypes,
-                                              defaultextension=self._fileTypes[0][1],
-                                              initialdir=self._templateDir)
+        fileName = filedialog.askopenfilename(
+            filetypes=self._fileTypes,
+            defaultextension=self._fileTypes[0][1],
+            initialdir=self._templateDir
+            )
         if fileName:
             try:
                 templates = MdTemplate(fileName, self._mdl, self._ctrl)
