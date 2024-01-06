@@ -103,7 +103,7 @@ class Plugin():
 
     def _new_project(self):
         """Create a noveltree project instance."""
-        self._ctrl.c_new_project()
+        self._ctrl.new_project()
         self._load_template()
 
     def _open_folder(self):
